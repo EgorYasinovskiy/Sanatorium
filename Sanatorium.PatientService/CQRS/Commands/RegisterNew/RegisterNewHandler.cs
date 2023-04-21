@@ -4,9 +4,10 @@ using Sanatorium.PatientService.DataModel;
 
 namespace Sanatorium.PatientService.CQRS.Commands.RegisterNew
 {
-	public class RegisterNewHandler : IRequestHandler<RegisterNew>
+	public class RegisterNewHandler : CommandHandlerBase, IRequestHandler<RegisterNew>
 	{
-		IPatientRepository _patientRepository;
+
+		public RegisterNewHandler(IPatientRepository patientRepository) : base(patientRepository) { }
 
 		public async Task Handle(RegisterNew request, CancellationToken cancellationToken)
 		{
@@ -15,7 +16,7 @@ namespace Sanatorium.PatientService.CQRS.Commands.RegisterNew
 			patient.PhoneNumber = request.PhoneNumber;
 			patient.FirstName = request.FirstName;
 			patient.LastName = request.LastName;
-			patient.MiddleName= request.MiddleName;
+			patient.MiddleName = request.MiddleName;
 			patient.DateRegistered = DateOnly.FromDateTime(DateTime.Now);
 			patient.Id = Guid.NewGuid();
 

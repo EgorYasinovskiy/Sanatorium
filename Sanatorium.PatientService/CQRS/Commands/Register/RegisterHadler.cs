@@ -2,14 +2,10 @@
 
 namespace Sanatorium.PatientService.CQRS.Commands.Register
 {
-	public class RegisterHadler : IRequestHandler<Register>
+	public class RegisterHadler : CommandHandlerBase, IRequestHandler<Register>
 	{
-		IPatientRepository _patientRepository;
-
-		public RegisterHadler(IPatientRepository patientRepository)
-		{
-			_patientRepository = patientRepository;
-		}
+		
+		public RegisterHadler(IPatientRepository patientRepository):base(patientRepository){}
 
 		public async Task Handle(Register request, CancellationToken cancellationToken)
 		{
