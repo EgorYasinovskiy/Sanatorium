@@ -1,4 +1,6 @@
-﻿using MediatR;
+﻿using AutoMapper;
+
+using MediatR;
 
 using Sanatorium.PatientService.DataModel;
 
@@ -7,7 +9,7 @@ namespace Sanatorium.PatientService.CQRS.Commands.RegisterNew
 	public class RegisterNewHandler : RequestHandlerBase, IRequestHandler<RegisterNew>
 	{
 
-		public RegisterNewHandler(IPatientRepository patientRepository) : base(patientRepository) { }
+		public RegisterNewHandler(IPatientRepository patientRepository, IMapper mapper) : base(patientRepository, mapper) { }
 
 		public async Task Handle(RegisterNew request, CancellationToken cancellationToken)
 		{
