@@ -1,11 +1,13 @@
-﻿using MediatR;
+﻿using AutoMapper;
+
+using MediatR;
 
 namespace Sanatorium.PatientService.CQRS.Commands.Register
 {
-	public class RegisterHadler : CommandHandlerBase, IRequestHandler<Register>
+	public class RegisterHadler : RequestHandlerBase, IRequestHandler<Register>
 	{
 		
-		public RegisterHadler(IPatientRepository patientRepository):base(patientRepository){}
+		public RegisterHadler(IPatientRepository patientRepository, IMapper mapper): base(patientRepository, mapper) {}
 
 		public async Task Handle(Register request, CancellationToken cancellationToken)
 		{

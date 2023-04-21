@@ -4,7 +4,7 @@ using Sanatorium.PatientService.DataModel;
 
 namespace Sanatorium.PatientService.CQRS.Commands.RegisterNew
 {
-	public class RegisterNewHandler : CommandHandlerBase, IRequestHandler<RegisterNew>
+	public class RegisterNewHandler : RequestHandlerBase, IRequestHandler<RegisterNew>
 	{
 
 		public RegisterNewHandler(IPatientRepository patientRepository) : base(patientRepository) { }
