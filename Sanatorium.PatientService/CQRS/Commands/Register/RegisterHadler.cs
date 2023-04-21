@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Sanatorium.PatientService.CQRS.Commands.Register
+﻿namespace Sanatorium.PatientService.CQRS.Commands.Register
 {
-	internal class RegisterHadler
+	public class RegisterHadler
 	{
 	}
 }

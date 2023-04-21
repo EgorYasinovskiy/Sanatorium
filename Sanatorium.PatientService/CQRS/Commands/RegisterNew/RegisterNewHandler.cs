@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sanatorium.PatientService.CQRS.Commands.RegisterNew
 {
-	internal class RegisterNewHandler
+	public class RegisterNewHandler
 	{
 	}
 }
