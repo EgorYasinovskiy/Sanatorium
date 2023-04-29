@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-using Sanatorium.PatientService.DataModel;
-using Sanatorium.PatientService.Interfaces;
+using Sanatorium.PatientService.BusinessLogic.Interfaces;
+using Sanatorium.PatientService.Model;
 
-namespace Sanatorium.PatientService
+namespace Sanatorium.PatientService.Api
 {
 	public class PatientRepository : IPatientRepository
 	{

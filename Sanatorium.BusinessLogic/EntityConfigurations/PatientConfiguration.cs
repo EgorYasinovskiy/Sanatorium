@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 using Sanatorium.PatientService.Model;
 
-namespace Sanatorium.PatientService.Api.EntityConfigurations
+namespace Sanatorium.PatientService.BusinessLogic.EntityConfigurations
 {
 	public class PatientConfiguration : IEntityTypeConfiguration<Patient>
 	{
@@ -15,7 +15,7 @@ namespace Sanatorium.PatientService.Api.EntityConfigurations
 			builder.Property(x => x.LastName).HasMaxLength(64).IsRequired();
 			builder.Property(x => x.MiddleName).HasMaxLength(64).IsRequired();
 			builder.Property(x => x.PhoneNumber).HasMaxLength(16).IsRequired();
-			builder.Property(x => x.Discharged).IsRequired().HasDefaultValue(true);
+			builder.Property(x => x.Discharged).IsRequired();
 		}
 	}
 }

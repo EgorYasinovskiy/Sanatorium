@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-using Sanatorium.PatientService.DTO;
+using Sanatorium.PatientService.BusinessLogic.DTO;
 
-namespace Sanatorium.PatientService.Controllers
+namespace Sanatorium.PatientService.Api.Controllers
 {
 	[Produces("application/json")]
 	[Route("api/[controller]")]
@@ -13,7 +13,7 @@ namespace Sanatorium.PatientService.Controllers
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		public async Task<ActionResult<PatientList>> GetAll()
 		{
-			var query = new CQRS.Queries.GetAll.GetAll();
+			var query = new BusinessLogic.CQRS.Queries.GetAll.GetAll();
 			var result = await Mediator.Send(query);
 			return Ok(result);
 		}
@@ -24,7 +24,7 @@ namespace Sanatorium.PatientService.Controllers
 		[ProducesResponseType(StatusCodes.Status404NotFound)]
 		public async Task<ActionResult<PatientDTO>> Get(Guid id)
 		{
-			var query = new CQRS.Queries.GetById.GetById() { Id = id };
+			var query = new BusinessLogic.CQRS.Queries.GetById.GetById() { Id = id };
 			var result = await Mediator.Send(query);
 			if (result == null)
 				return NotFound();
@@ -35,7 +35,7 @@ namespace Sanatorium.PatientService.Controllers
 		[ProducesResponseType(StatusCodes.Status201Created)]
 		public async Task<IActionResult> RegisterNew([FromBody] CreatePatientDTO patient)
 		{
-			var command = new CQRS.Commands.RegisterNew.RegisterNew() { Patient = patient };
+			var command = new BusinessLogic.CQRS.Commands.RegisterNew.RegisterNew() { Patient = patient };
 			var result = await Mediator.Send(command);
 			return CreatedAtRoute("Get", new { id = result.Id }, result);
 		}
@@ -44,7 +44,7 @@ namespace Sanatorium.PatientService.Controllers
 		[ProducesResponseType(StatusCodes.Status204NoContent)]
 		public async Task<IActionResult> Register(Guid id)
 		{
-			var command = new CQRS.Commands.Register.Register() { Id = id };
+			var command = new BusinessLogic.CQRS.Commands.Register.Register() { Id = id };
 			await Mediator.Send(command);
 			return NoContent();
 		}
@@ -53,7 +53,7 @@ namespace Sanatorium.PatientService.Controllers
 		[ProducesResponseType(StatusCodes.Status204NoContent)]
 		public async Task<IActionResult> Discharge(Guid id)
 		{
-			var command = new CQRS.Commands.Discharge.Discharge() { Id = id };
+			var command = new BusinessLogic.CQRS.Commands.Discharge.Discharge() { Id = id };
 			await Mediator.Send(command);
 			return NoContent();
 		}
@@ -62,7 +62,7 @@ namespace Sanatorium.PatientService.Controllers
 		[ProducesResponseType(StatusCodes.Status204NoContent)]
 		public async Task<IActionResult> Update([FromBody] PatientUpdate patientDto)
 		{
-			var command = new CQRS.Commands.Update.Update() { NewPatient = patientDto };
+			var command = new BusinessLogic.CQRS.Commands.Update.Update() { NewPatient = patientDto };
 			await Mediator.Send(command);
 			return NoContent();
 		}

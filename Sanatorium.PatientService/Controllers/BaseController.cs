@@ -3,7 +3,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Sanatorium.PatientService.Controllers
+namespace Sanatorium.PatientService.Api.Controllers
 {
 	[ApiController]
 	[Route("api/[controller]/[action]")]

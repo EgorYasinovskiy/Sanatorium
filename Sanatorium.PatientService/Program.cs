@@ -1,14 +1,12 @@
-﻿using System.Reflection;
-
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-using Sanatorium.PatientService.Interfaces;
-using Sanatorium.PatientService.Mappings;
+using Sanatorium.PatientService.BusinessLogic.Interfaces;
+using Sanatorium.PatientService.BusinessLogic.Mappings;
 
-namespace Sanatorium.PatientService
+namespace Sanatorium.PatientService.Api
 {
 	public class Program
 	{
@@ -24,12 +22,12 @@ namespace Sanatorium.PatientService
 			builder.Services.AddScoped<IPatientRepository, PatientRepository>();
 			builder.Services.AddAutoMapper(cfg =>
 			{
-				cfg.AddProfile(new AssemblyMappingsProfile(Assembly.GetExecutingAssembly()));
+				cfg.AddProfile(new AssemblyMappingsProfile(typeof(IPatientDbContext).Assembly));
 			});
 
 			builder.Services.AddMediatR(cfg =>
 			{
-				cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly());
+				cfg.RegisterServicesFromAssemblies(typeof(IPatientDbContext).Assembly);
 			});
 
 			builder.Services.AddControllers();

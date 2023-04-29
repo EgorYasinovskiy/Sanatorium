@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-using Sanatorium.PatientService.DataModel;
-using Sanatorium.PatientService.EntityConfigurations;
-using Sanatorium.PatientService.Interfaces;
+using Sanatorium.PatientService.Api.EntityConfigurations;
+using Sanatorium.PatientService.BusinessLogic.Interfaces;
+using Sanatorium.PatientService.Model;
 
-namespace Sanatorium.PatientService
+namespace Sanatorium.PatientService.Api
 {
 	public class PatientDbContext : DbContext, IPatientDbContext
 	{
