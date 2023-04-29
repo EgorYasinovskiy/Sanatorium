@@ -32,9 +32,6 @@ namespace Sanatorium.PatientService
 		public async Task<Patient> GetById(Guid id, CancellationToken cancellationToken)
 		{
 			var patient = await _dbContext.Patients.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
-			if(patient == null)
-				throw new ArgumentException($"Patient with Id {id} was not found");
-
 			return patient;
 		}
 
