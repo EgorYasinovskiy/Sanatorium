@@ -1,5 +1,3 @@
-using AutoMapper;
-
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,11 +10,6 @@ namespace Sanatorium.PatientService.Controllers
 	[Route("api/[controller]")]
 	public class PatientController : BaseController
 	{
-		private readonly IMapper _mapper;
-
-		public PatientController(IMapper mapper) =>
-			_mapper = mapper;
-
 		[HttpGet]
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		public async Task<ActionResult<PatientList>> GetAll()
