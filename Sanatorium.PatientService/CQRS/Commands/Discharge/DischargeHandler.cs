@@ -13,7 +13,7 @@ namespace Sanatorium.PatientService.CQRS.Commands.Discharge
 
 		public async Task Handle(Discharge request, CancellationToken cancellationToken)
 		{
-			var patient = await _patientRepository.GetById(request.ID, cancellationToken);
+			var patient = await _patientRepository.GetById(request.Id, cancellationToken);
 			if (patient != null)
 			{
 				patient.Discharged = true;
