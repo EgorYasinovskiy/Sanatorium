@@ -1,3 +1,5 @@
+using System.Reflection.Metadata.Ecma335;
+
 using AutoMapper;
 
 using Microsoft.AspNetCore.Http;
@@ -26,15 +28,24 @@ namespace Sanatorium.PatientService.Controllers
 		}
 
 
-		[HttpGet("{id}")]
+		[HttpGet("{id}", Name = "Get")]
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		public async Task<ActionResult<PatientList>> Get(Guid id)
+		public async Task<ActionResult<PatientDTO>> Get(Guid id)
 		{
 			var result = await Mediator.Send(new CQRS.Queries.GetById.GetById() { Id = id});
 			if(result == null)
 				return NotFound();
 			return Ok(result);
+		}
+		[HttpPost]
+		[ProducesResponseType(StatusCodes.Status201Created)]
+		public async Task<ActionResult> Register([FromBody] CreatePatientDTO patient)
+		{
+			var command = new CQRS.Commands.RegisterNew.RegisterNew();
+			command.Patient = patient;
+			var result = await Mediator.Send(command);
+			return CreatedAtRoute("Get", new {id = result.Id},result);
 		}
 
 	}
