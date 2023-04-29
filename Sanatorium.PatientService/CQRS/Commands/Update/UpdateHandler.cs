@@ -2,6 +2,8 @@
 
 using MediatR;
 
+using Sanatorium.PatientService.Interfaces;
+
 namespace Sanatorium.PatientService.CQRS.Commands.Update
 {
 	public class UpdateHandler : RequestHandlerBase, IRequestHandler<Update>

@@ -2,7 +2,9 @@
 
 using MediatR;
 
-namespace Sanatorium.PatientService.CQRS.Commands
+using Sanatorium.PatientService.Interfaces;
+
+namespace Sanatorium.PatientService.CQRS
 {
 	public class RequestHandlerBase
 	{

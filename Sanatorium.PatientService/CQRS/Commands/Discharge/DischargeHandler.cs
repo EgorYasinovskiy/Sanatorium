@@ -2,12 +2,14 @@
 
 using MediatR;
 
-namespace Sanatorium.PatientService.CQRS.Commands.RegisterNew.Discharge
+using Sanatorium.PatientService.Interfaces;
+
+namespace Sanatorium.PatientService.CQRS.Commands.Discharge
 {
 	public class DischargeHandler : RequestHandlerBase, IRequestHandler<Discharge>
 	{
 
-		public DischargeHandler(IPatientRepository patientRepository, IMapper mapper) : base(patientRepository, mapper){}
+		public DischargeHandler(IPatientRepository patientRepository, IMapper mapper) : base(patientRepository, mapper) { }
 
 		public async Task Handle(Discharge request, CancellationToken cancellationToken)
 		{

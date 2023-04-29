@@ -2,8 +2,8 @@
 
 using MediatR;
 
-using Sanatorium.PatientService.CQRS.Commands;
 using Sanatorium.PatientService.DTO;
+using Sanatorium.PatientService.Interfaces;
 
 namespace Sanatorium.PatientService.CQRS.Queries.GetAll
 {

@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Sanatorium.PatientService.CQRS.Commands.RegisterNew.Discharge
+namespace Sanatorium.PatientService.CQRS.Commands.Discharge
 {
 	public class Discharge : IRequest
 	{

@@ -3,6 +3,7 @@
 using MediatR;
 
 using Sanatorium.PatientService.DataModel;
+using Sanatorium.PatientService.Interfaces;
 
 namespace Sanatorium.PatientService.CQRS.Commands.RegisterNew
 {
