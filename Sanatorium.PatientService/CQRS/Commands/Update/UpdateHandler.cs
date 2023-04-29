@@ -22,6 +22,7 @@ namespace Sanatorium.PatientService.CQRS.Commands.Update
 				pacient.LastName = request.NewPatient.LastName;
 				pacient.MiddleName = request.NewPatient.MiddleName;
 				pacient.PhoneNumber = request.NewPatient.PhoneNumber;
+
 				await _patientRepository.Update(pacient, cancellationToken);
 			}
 		}

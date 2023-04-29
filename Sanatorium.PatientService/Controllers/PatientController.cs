@@ -5,7 +5,6 @@ using Sanatorium.PatientService.DTO;
 
 namespace Sanatorium.PatientService.Controllers
 {
-
 	[Produces("application/json")]
 	[Route("api/[controller]")]
 	public class PatientController : BaseController
@@ -31,6 +30,7 @@ namespace Sanatorium.PatientService.Controllers
 				return NotFound();
 			return Ok(result);
 		}
+
 		[HttpPost]
 		[ProducesResponseType(StatusCodes.Status201Created)]
 		public async Task<IActionResult> RegisterNew([FromBody] CreatePatientDTO patient)
@@ -39,6 +39,7 @@ namespace Sanatorium.PatientService.Controllers
 			var result = await Mediator.Send(command);
 			return CreatedAtRoute("Get", new { id = result.Id }, result);
 		}
+
 		[HttpPut("{id}/register")]
 		[ProducesResponseType(StatusCodes.Status204NoContent)]
 		public async Task<IActionResult> Register(Guid id)
