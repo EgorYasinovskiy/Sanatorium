@@ -1,7 +1,5 @@
 ﻿using AutoMapper;
 
-using MediatR;
-
 using Sanatorium.PatientService.Interfaces;
 
 namespace Sanatorium.PatientService.CQRS

@@ -9,7 +9,7 @@ namespace Sanatorium.PatientService.CQRS.Queries.GetAll
 {
 	public class GetAllHandler : RequestHandlerBase, IRequestHandler<GetAll, PatientList>
 	{
-		
+
 		public GetAllHandler(IPatientRepository patientRepository, IMapper mapper) : base(patientRepository, mapper)
 		{
 		}

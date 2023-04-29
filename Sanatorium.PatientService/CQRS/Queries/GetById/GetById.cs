@@ -1,6 +1,5 @@
 ﻿using MediatR;
 
-using Sanatorium.PatientService.DataModel;
 using Sanatorium.PatientService.DTO;
 
 namespace Sanatorium.PatientService.CQRS.Queries.GetById

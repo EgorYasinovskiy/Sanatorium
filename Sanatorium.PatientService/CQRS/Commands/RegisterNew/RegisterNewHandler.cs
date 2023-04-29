@@ -27,7 +27,7 @@ namespace Sanatorium.PatientService.CQRS.Commands.RegisterNew
 			await _patientRepository.Create(patient, cancellationToken);
 			await _patientRepository.SaveChanges(cancellationToken);
 
-			return _mapper.Map<PatientDTO>(patient); 
+			return _mapper.Map<PatientDTO>(patient);
 		}
 	}
 }

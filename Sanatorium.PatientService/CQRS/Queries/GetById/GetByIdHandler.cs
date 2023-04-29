@@ -2,7 +2,6 @@
 
 using MediatR;
 
-using Sanatorium.PatientService.DataModel;
 using Sanatorium.PatientService.DTO;
 using Sanatorium.PatientService.Interfaces;
 
