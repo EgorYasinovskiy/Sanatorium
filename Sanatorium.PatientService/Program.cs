@@ -1,8 +1,11 @@
 ﻿using System.Reflection;
 
 using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
+using Sanatorium.PatientService.Interfaces;
 using Sanatorium.PatientService.Mappings;
 
 namespace Sanatorium.PatientService
@@ -14,7 +17,11 @@ namespace Sanatorium.PatientService
 			var builder = WebApplication.CreateBuilder(args);
 
 			// Add services to the container.
-
+			builder.Services.AddDbContext<IPatientDbContext, PatientDbContext>(opt =>
+			{
+				opt.UseNpgsql(builder.Configuration.GetConnectionString("PatientDb"));
+			});
+			builder.Services.AddScoped<IPatientRepository, PatientRepository>();
 			builder.Services.AddAutoMapper(cfg =>
 			{
 				cfg.AddProfile(new AssemblyMappingsProfile(Assembly.GetExecutingAssembly()));
