@@ -7,12 +7,12 @@ using Sanatorium.PatientService.Interfaces;
 
 namespace Sanatorium.PatientService.CQRS.Commands.RegisterNew
 {
-	public class RegisterNewHandler : RequestHandlerBase, IRequestHandler<RegisterNew>
+	public class RegisterNewHandler : RequestHandlerBase, IRequestHandler<RegisterNew, Guid>
 	{
 
 		public RegisterNewHandler(IPatientRepository patientRepository, IMapper mapper) : base(patientRepository, mapper) { }
 
-		public async Task Handle(RegisterNew request, CancellationToken cancellationToken)
+		public async Task<Guid> Handle(RegisterNew request, CancellationToken cancellationToken)
 		{
 			var patient = new Patient();
 			patient.BirthDate = request.Patient.BirthDate;
@@ -25,6 +25,8 @@ namespace Sanatorium.PatientService.CQRS.Commands.RegisterNew
 
 			await _patientRepository.Create(patient, cancellationToken);
 			await _patientRepository.SaveChanges(cancellationToken);
+
+			return patient.Id;
 		}
 	}
 }
