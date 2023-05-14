@@ -15,7 +15,7 @@ namespace Sanatorium.PatientService.Api
 		public async Task Create(Patient patient, CancellationToken cancellationToken)
 		{
 			await _dbContext.Patients.AddAsync(patient, cancellationToken);
-		}
+		} 
 		public async Task DeleteById(Guid id, CancellationToken cancellationToken)
 		{
 			var patient = await _dbContext.Patients.FirstOrDefaultAsync(x => x.Id == id);
