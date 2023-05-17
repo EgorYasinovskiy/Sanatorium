@@ -2,7 +2,7 @@
 
 using AutoMapper;
 
-namespace Sanatorium.PatientService.BusinessLogic.Mappings
+namespace Sanatorium.Common.Mappings
 {
 	public class AssemblyMappingsProfile : Profile
 	{

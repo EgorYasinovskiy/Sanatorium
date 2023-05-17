@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 
-namespace Sanatorium.PatientService.BusinessLogic.Mappings
+namespace Sanatorium.Common.Mappings
 {
 	public interface MapFrom<T> where T : class
 	{
-		public void CreateMapping(Profile profile) =>
+		public virtual void CreateMapping(Profile profile) =>
 			profile.CreateMap(typeof(T), GetType());
 	}
 }

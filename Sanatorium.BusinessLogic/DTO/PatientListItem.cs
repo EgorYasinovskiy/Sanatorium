@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-using Sanatorium.PatientService.BusinessLogic.Mappings;
+using Sanatorium.Common.Mappings;
 using Sanatorium.PatientService.Model;
 
 namespace Sanatorium.PatientService.BusinessLogic.DTO

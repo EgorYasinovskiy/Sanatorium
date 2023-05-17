@@ -1,4 +1,6 @@
-﻿namespace Sanatorium.StaffService.Model
+﻿using System.Text;
+
+namespace Sanatorium.StaffService.Model
 {
 	public class Staff
 	{
@@ -15,5 +17,11 @@
 		public int DayWork { get; set; }
 		public int DayHoliday { get; set; }
 		public DateOnly WorkStart { get; set; }
+		public virtual List<WorkRecord> WorkRecords { get; set; }
+
+		public string GetDisplayString()
+		{
+			return $"{LastName} {FirstName[0]}. {MiddleName[0]}.";
+		}
 	}
 }
