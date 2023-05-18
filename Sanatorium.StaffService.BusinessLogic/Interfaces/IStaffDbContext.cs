@@ -6,7 +6,8 @@ namespace Sanatorium.StaffService.BusinessLogic.Interfaces
 {
 	public interface IStaffDbContext
 	{
-		DbSet<Staff> Patients { get; set; }
+		DbSet<Staff> Staff { get; set; }
+		DbSet<WorkRecord> WorkRecords { get; set; }
 		Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 	}
 }

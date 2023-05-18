@@ -13,10 +13,11 @@ namespace Sanatorium.StaffService.Model
 		public int CabinetNumber { get; set; }
 		public string Position { get; set; }
 		public Guid ManagerId { get; set; }
-		public Staff Manager { get; set; }
+		public Staff? Manager { get; set; }
 		public int DayWork { get; set; }
 		public int DayHoliday { get; set; }
 		public DateOnly WorkStart { get; set; }
+		public double SalaryPerHour { get; set; }
 		public virtual List<WorkRecord> WorkRecords { get; set; }
 
 		public string GetDisplayString()

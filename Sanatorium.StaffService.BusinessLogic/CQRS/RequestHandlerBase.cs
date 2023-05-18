@@ -7,12 +7,14 @@ namespace Sanatorium.StaffService.BusinessLogic
 	public class RequestHandlerBase
 	{
 
-		protected IStaffRepository _patientRepository;
+		protected IStaffRepository _staffRepository;
+		protected IWorkRecordRepository _workRecordRepository;
 		protected IMapper _mapper;
 
-		public RequestHandlerBase(IStaffRepository patientRepository, IMapper mapper)
+		public RequestHandlerBase(IStaffRepository staffRepository, IWorkRecordRepository workRecordRepository, IMapper mapper)
 		{
-			_patientRepository = patientRepository;
+			_staffRepository = staffRepository;
+			_workRecordRepository = workRecordRepository;
 			_mapper = mapper;
 		}
 	}
