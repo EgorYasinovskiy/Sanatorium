@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Sanatorium.RoomService.BusinessLogic.Interfaces
+﻿namespace Sanatorium.RoomService.BusinessLogic.Interfaces
 {
-	public class IBookingRepository
+	public interface IBookingRepository
 	{
 	}
 }
