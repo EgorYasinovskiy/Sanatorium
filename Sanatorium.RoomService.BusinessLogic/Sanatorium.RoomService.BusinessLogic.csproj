@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="CQRS\Commands\CreateBooking\" />
+    <Folder Include="CQRS\Commands\CreateRoomMove\" />
+    <Folder Include="CQRS\Commands\CreateRoom\" />
+    <Folder Include="CQRS\Commands\DeleteBooking\" />
+    <Folder Include="CQRS\Commands\DeleteRoomMove\" />
+    <Folder Include="CQRS\Commands\DeleteRoom\" />
+    <Folder Include="CQRS\Commands\UpdateBooking\" />
+    <Folder Include="CQRS\Commands\UpdateRoomMove\" />
+    <Folder Include="CQRS\Queries\GetBookings\" />
+    <Folder Include="CQRS\Queries\GetFreeRooms\" />
+    <Folder Include="CQRS\Queries\GetRoomMoves\" />
+    <Folder Include="CQRS\Queries\GetRoom\" />
+    <Folder Include="CQRS\Commands\UpdateRoom\" />
+    <Folder Include="DTO\" />
+    <Folder Include="EntityConfigurations\" />
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+
+</Project>

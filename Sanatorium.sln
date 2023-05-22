@@ -15,7 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanatorium.StaffService.Bus
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanatorium.Common", "Sanatorium.Common\Sanatorium.Common.csproj", "{EABE135C-1176-4C88-9E5E-995EC8E938FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanatorium.StaffService.Api", "Sanatorium.StaffService.Api\Sanatorium.StaffService.Api.csproj", "{E4412D41-FE81-4464-B69B-72659847B775}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanatorium.StaffService.Api", "Sanatorium.StaffService.Api\Sanatorium.StaffService.Api.csproj", "{E4412D41-FE81-4464-B69B-72659847B775}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanatorium.RoomService.Model", "Sanatorium.RoomService.Model\Sanatorium.RoomService.Model.csproj", "{0205C566-ABB3-4C19-8371-025EB3460643}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanatorium.RoomService.BusinessLogic", "Sanatorium.RoomService.BusinessLogic\Sanatorium.RoomService.BusinessLogic.csproj", "{01285B51-976C-4191-9047-01875AB97500}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,14 @@ Global
 		{E4412D41-FE81-4464-B69B-72659847B775}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4412D41-FE81-4464-B69B-72659847B775}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4412D41-FE81-4464-B69B-72659847B775}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0205C566-ABB3-4C19-8371-025EB3460643}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0205C566-ABB3-4C19-8371-025EB3460643}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0205C566-ABB3-4C19-8371-025EB3460643}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0205C566-ABB3-4C19-8371-025EB3460643}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01285B51-976C-4191-9047-01875AB97500}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01285B51-976C-4191-9047-01875AB97500}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01285B51-976C-4191-9047-01875AB97500}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01285B51-976C-4191-9047-01875AB97500}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
