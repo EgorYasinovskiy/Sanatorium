@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using MediatR;
+
 namespace Sanatorium.StaffService.BusinessLogic.CQRS.Commands.DeleteWorkTime
 {
-	internal class DeleteWorktime
+	public class DeleteWorktime : IRequest
 	{
+		public Guid RecordId { get; set; }
 	}
 }
