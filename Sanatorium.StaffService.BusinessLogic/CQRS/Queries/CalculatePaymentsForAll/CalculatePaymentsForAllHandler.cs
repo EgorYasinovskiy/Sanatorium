@@ -36,11 +36,5 @@ namespace Sanatorium.StaffService.BusinessLogic.CQRS.Queries.CalculatePaymentsFo
 				Payments = workRecords.Where(x=>x!=null).ToArray()
 			};
 		}
-
-		private async Task<string> GetStaffNameById(Guid staffId, CancellationToken cancellationToken)
-		{
-			var staff = await _staffRepository.GetById(staffId, cancellationToken);
-			return staff?.GetDisplayString();
-		}
 	}
 }

@@ -1,10 +1,7 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.EntityFrameworkCore;
 
+using Sanatorium.Common.Mappings;
 using Sanatorium.PatientService.BusinessLogic.Interfaces;
-using Sanatorium.PatientService.BusinessLogic.Mappings;
 
 namespace Sanatorium.PatientService.Api
 {
