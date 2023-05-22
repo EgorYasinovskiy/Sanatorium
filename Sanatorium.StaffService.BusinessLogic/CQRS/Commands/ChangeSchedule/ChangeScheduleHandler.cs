@@ -6,7 +6,7 @@ using Sanatorium.StaffService.BusinessLogic.Interfaces;
 
 namespace Sanatorium.StaffService.BusinessLogic.CQRS.Commands.ChangeSchedule
 {
-	internal class ChangeScheduleHandler : RequestHandlerBase, IRequestHandler<ChangeSchedule>
+	public class ChangeScheduleHandler : RequestHandlerBase, IRequestHandler<ChangeSchedule>
 	{
 		public ChangeScheduleHandler(IStaffRepository staffRepository, IWorkRecordRepository workRecordRepository, IMapper mapper) : base(staffRepository, workRecordRepository, mapper)
 		{

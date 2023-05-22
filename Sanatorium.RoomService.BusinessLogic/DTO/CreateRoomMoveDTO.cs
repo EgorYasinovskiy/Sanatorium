@@ -1,6 +1,6 @@
 ﻿namespace Sanatorium.RoomService.BusinessLogic.DTO
 {
-	internal class CreateRoomMoveDTO
+	public class CreateRoomMoveDTO
 	{
 	}
 }

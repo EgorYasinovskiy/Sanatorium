@@ -6,7 +6,7 @@ using Sanatorium.StaffService.BusinessLogic.Interfaces;
 
 namespace Sanatorium.StaffService.BusinessLogic.CQRS.Commands.UpdateWorkTime
 {
-	internal class UpdateWorktimeHandler : RequestHandlerBase, IRequestHandler<UpdateWorkTime>
+	public class UpdateWorktimeHandler : RequestHandlerBase, IRequestHandler<UpdateWorkTime>
 	{
 		public UpdateWorktimeHandler(IStaffRepository staffRepository, IWorkRecordRepository workRecordRepository, IMapper mapper) : base(staffRepository, workRecordRepository, mapper)
 		{
