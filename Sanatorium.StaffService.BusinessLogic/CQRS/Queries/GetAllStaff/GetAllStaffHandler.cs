@@ -12,7 +12,7 @@ namespace Sanatorium.StaffService.BusinessLogic.CQRS.Queries.GetAllStaff
 		public GetAllStaffHandler(IStaffRepository staffRepository, IWorkRecordRepository workRecordRepository, IMapper mapper) : base(staffRepository, workRecordRepository, mapper)
 		{
 		}
-		
+
 		public async Task<StaffList> Handle(GetAllStaff request, CancellationToken cancellationToken)
 		{
 			var allStaff = await _staffRepository.GetAll(cancellationToken);

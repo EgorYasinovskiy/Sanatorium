@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace Sanatorium.StaffService.Model
+﻿namespace Sanatorium.StaffService.Model
 {
 	public class Staff
 	{

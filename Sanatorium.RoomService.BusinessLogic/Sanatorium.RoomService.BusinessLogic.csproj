@@ -20,7 +20,6 @@
     <Folder Include="CQRS\Queries\GetRoomMoves\" />
     <Folder Include="CQRS\Queries\GetRoom\" />
     <Folder Include="CQRS\Commands\UpdateRoom\" />
-    <Folder Include="DTO\" />
     <Folder Include="EntityConfigurations\" />
     <Folder Include="Interfaces\" />
   </ItemGroup>

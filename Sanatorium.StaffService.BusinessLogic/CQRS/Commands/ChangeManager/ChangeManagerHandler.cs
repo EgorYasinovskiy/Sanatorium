@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-
-using AutoMapper;
+﻿using AutoMapper;
 
 using MediatR;
 
@@ -17,10 +15,10 @@ namespace Sanatorium.StaffService.BusinessLogic.CQRS.Commands.ChangeManager
 		public async Task Handle(ChangeManager request, CancellationToken cancellationToken)
 		{
 			var staff = await _staffRepository.GetById(request.StaffId, cancellationToken);
-			if (staff != null) 
+			if (staff != null)
 			{
 				staff.ManagerId = request.NewManagerId;
-				await _staffRepository.Update(staff,cancellationToken);
+				await _staffRepository.Update(staff, cancellationToken);
 				await _staffRepository.SaveChanges(cancellationToken);
 			}
 		}

@@ -18,7 +18,7 @@ namespace Sanatorium.StaffService.BusinessLogic.CQRS.Queries.CalculatePaymentsFo
 			var workRecords = (await _workRecordRepository.GetAll(cancellationToken))
 				.Where(x => x.Date >= request.PeriodStart && x.Date <= request.PeriodEnd)
 				.GroupBy(x => x.StaffId)
-				.Select( x =>
+				.Select(x =>
 				{
 					var staff = _staffRepository.GetById(x.Key, cancellationToken).GetAwaiter().GetResult();
 					if (staff == null)
@@ -33,7 +33,7 @@ namespace Sanatorium.StaffService.BusinessLogic.CQRS.Queries.CalculatePaymentsFo
 			{
 				PeriodStart = request.PeriodStart,
 				PeriodEnd = request.PeriodEnd,
-				Payments = workRecords.Where(x=>x!=null).ToArray()
+				Payments = workRecords.Where(x => x != null).ToArray()
 			};
 		}
 	}

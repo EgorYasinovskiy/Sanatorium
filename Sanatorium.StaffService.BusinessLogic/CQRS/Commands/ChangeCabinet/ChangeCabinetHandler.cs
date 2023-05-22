@@ -14,11 +14,11 @@ namespace Sanatorium.StaffService.BusinessLogic.CQRS.Commands.ChangeCabinet
 
 		public async Task Handle(ChangeCabinet request, CancellationToken cancellationToken)
 		{
-			var staff= await _staffRepository.GetById(request.StaffId, cancellationToken);
-			if(staff != null)
+			var staff = await _staffRepository.GetById(request.StaffId, cancellationToken);
+			if (staff != null)
 			{
 				staff.CabinetNumber = request.NewCabinet;
-				await _staffRepository.Update(staff,cancellationToken);
+				await _staffRepository.Update(staff, cancellationToken);
 				await _staffRepository.SaveChanges(cancellationToken);
 			}
 		}

@@ -1,4 +1,5 @@
 ﻿using MediatR;
+
 using Microsoft.AspNetCore.Mvc;
 
 namespace Sanatorium.StaffService.Api.Controllers

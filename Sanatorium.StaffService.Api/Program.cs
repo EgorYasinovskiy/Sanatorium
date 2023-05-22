@@ -1,8 +1,8 @@
-using Sanatorium.StaffService.BusinessLogic.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using Sanatorium.StaffService.Api.Repositories;
-using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
+
 using Sanatorium.Common.Mappings;
+using Sanatorium.StaffService.Api.Repositories;
+using Sanatorium.StaffService.BusinessLogic.Interfaces;
 
 namespace Sanatorium.StaffService.Api
 {

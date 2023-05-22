@@ -14,7 +14,7 @@ namespace Sanatorium.StaffService.BusinessLogic.CQRS.Commands.DeleteWorkTime
 
 		public async Task Handle(DeleteWorktime request, CancellationToken cancellationToken)
 		{
-			await _workRecordRepository.DeleteById(request.RecordId,cancellationToken);
+			await _workRecordRepository.DeleteById(request.RecordId, cancellationToken);
 		}
 	}
 }

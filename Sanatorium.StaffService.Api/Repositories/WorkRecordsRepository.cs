@@ -9,7 +9,7 @@ namespace Sanatorium.StaffService.Api.Repositories
 	{
 		private readonly IStaffDbContext _staffDbContext;
 
-		public WorkRecordsRepository(IStaffDbContext staffDbContext) 
+		public WorkRecordsRepository(IStaffDbContext staffDbContext)
 		{
 			_staffDbContext = staffDbContext;
 		}
@@ -20,7 +20,7 @@ namespace Sanatorium.StaffService.Api.Repositories
 
 		public async Task DeleteById(Guid id, CancellationToken cancellationToken)
 		{
-			var record = await _staffDbContext.WorkRecords.FirstOrDefaultAsync(x=> x.Id == id,cancellationToken);
+			var record = await _staffDbContext.WorkRecords.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
 			if (record != null)
 				_staffDbContext.WorkRecords.Remove(record);
 		}
@@ -28,7 +28,7 @@ namespace Sanatorium.StaffService.Api.Repositories
 		public async Task<IEnumerable<WorkRecord>> GetAll(CancellationToken cancellationToken)
 		{
 			return await _staffDbContext.WorkRecords.ToListAsync(cancellationToken);
-			
+
 		}
 
 		public async Task<WorkRecord> GetById(Guid id, CancellationToken cancellationToken)
