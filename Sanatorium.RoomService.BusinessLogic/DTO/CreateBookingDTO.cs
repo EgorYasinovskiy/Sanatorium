@@ -4,6 +4,6 @@
 	{
 		public Guid RoomId { get; set; }
 		public DateOnly ArrivalDate { get; set; }
-		public int DurationInTimes { get; set; }
+		public int DurationInDays { get; set; }
 	}
 }
