@@ -6,7 +6,7 @@ namespace Sanatorium.PatientService.BusinessLogic.Interfaces
 {
 	public interface IPatientDbContext
 	{
-		DbSet<Patient> Patients { get; set; }
-		Task<int> SaveChangesAsync(CancellationToken cancellationToken);
+		public DbSet<Patient> Patients { get; set; }
+		public Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 	}
 }
