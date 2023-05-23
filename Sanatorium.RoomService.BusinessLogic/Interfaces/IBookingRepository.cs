@@ -5,5 +5,6 @@ namespace Sanatorium.RoomService.BusinessLogic.Interfaces
 {
 	public interface IBookingRepository : IRepositoryBase<Booking>
 	{
+		public Task<IEnumerable<Booking>> GetActual(CancellationToken cancellationToken);
 	}
 }

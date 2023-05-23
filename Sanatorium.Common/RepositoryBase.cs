@@ -1,6 +1,6 @@
 ﻿namespace Sanatorium.Common
 {
-	public interface IRepositoryBase<T> where T: class
+	public interface IRepositoryBase<T> where T : class
 	{
 		public Task Create(T entity, CancellationToken cancellationToken);
 		public Task<T> GetById(Guid id, CancellationToken cancellationToken);

@@ -2,6 +2,6 @@
 {
 	public class RoomListDTO
 	{
-		public IEnumerable<RoomDTO> Rooms { get;set; }
+		public IEnumerable<RoomDTO> Rooms { get; set; }
 	}
 }
