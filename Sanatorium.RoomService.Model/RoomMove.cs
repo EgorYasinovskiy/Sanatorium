@@ -1,6 +1,6 @@
 ﻿namespace Sanatorium.RoomService.Model
 {
-	public class RoomMoves
+	public class RoomMove
 	{
 		public Guid Id { get; set; }
 		public Guid PatientId { get; set; }

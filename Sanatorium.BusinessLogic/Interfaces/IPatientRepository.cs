@@ -1,14 +1,9 @@
-﻿using Sanatorium.PatientService.Model;
+﻿using Sanatorium.Common;
+using Sanatorium.PatientService.Model;
 
 namespace Sanatorium.PatientService.BusinessLogic.Interfaces
 {
-	public interface IPatientRepository
+	public interface IPatientRepository : IRepositoryBase<Patient>
 	{
-		public Task Create(Patient patient, CancellationToken cancellationToken);
-		public Task<Patient> GetById(Guid id, CancellationToken cancellationToken);
-		public Task<IEnumerable<Patient>> GetAll(CancellationToken cancellationToken);
-		public Task DeleteById(Guid id, CancellationToken cancellationToken);
-		public Task Update(Patient patient, CancellationToken cancellationToken);
-		public Task SaveChanges(CancellationToken cancellationToken);
 	}
 }
