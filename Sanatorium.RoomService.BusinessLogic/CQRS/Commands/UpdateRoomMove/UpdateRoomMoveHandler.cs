@@ -22,7 +22,7 @@ namespace Sanatorium.RoomService.BusinessLogic.CQRS.Commands.UpdateRoomMove
 			roomMove.OldRoomId = request.UpdateRoomMoveDTO.OldRoomId;
 			roomMove.PatientId = request.UpdateRoomMoveDTO.PatientId;
 			roomMove.Date = request.UpdateRoomMoveDTO.Date;
-			await _roomMoveRepository.Update(roomMove,cancellationToken);
+			await _roomMoveRepository.Update(roomMove, cancellationToken);
 			await _roomMoveRepository.SaveChanges(cancellationToken);
 		}
 	}

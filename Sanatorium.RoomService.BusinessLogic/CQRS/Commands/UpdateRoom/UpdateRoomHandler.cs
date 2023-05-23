@@ -14,7 +14,7 @@ namespace Sanatorium.RoomService.BusinessLogic.CQRS.Commands.UpdateRoom
 
 		public async Task Handle(UpdateRoom request, CancellationToken cancellationToken)
 		{
-			var room = await _roomRepository.GetById(request.UpdateRoomDTO.Id,cancellationToken);
+			var room = await _roomRepository.GetById(request.UpdateRoomDTO.Id, cancellationToken);
 			if (room == null)
 				return;
 			room.Category = request.UpdateRoomDTO.Category;

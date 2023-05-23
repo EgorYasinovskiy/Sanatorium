@@ -1,6 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-
-using MediatR;
+﻿using MediatR;
 
 using Sanatorium.RoomService.BusinessLogic.DTO;
 
