@@ -9,7 +9,7 @@ namespace Sanatorium.RoomService.BusinessLogic.DTO
 	{
 		public Guid Id { get; set; }
 		public Guid RoomId { get; set; }
-		public int RoomNumber{ get; set; }
+		public int RoomNumber { get; set; }
 		public DateOnly ArrivalDate { get; set; }
 		public int DurationInDays { get; set; }
 

@@ -15,14 +15,14 @@ namespace Sanatorium.RoomService.Api.Repositories
 		}
 		public async Task Create(Booking entity, CancellationToken cancellationToken)
 		{
-			await _dbContext.Bookings.AddAsync(entity,cancellationToken);
+			await _dbContext.Bookings.AddAsync(entity, cancellationToken);
 		}
 
 		public async Task DeleteById(Guid id, CancellationToken cancellationToken)
 		{
-			var booking = await _dbContext.Bookings.FirstOrDefaultAsync(x => x.Id == id,cancellationToken);
-			if(booking!=null)
-				await Task.Run(()=>_dbContext.Bookings.Remove(booking),cancellationToken);
+			var booking = await _dbContext.Bookings.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+			if (booking != null)
+				await Task.Run(() => _dbContext.Bookings.Remove(booking), cancellationToken);
 		}
 
 		public async Task<IEnumerable<Booking>> GetActual(CancellationToken cancellationToken)
@@ -47,7 +47,7 @@ namespace Sanatorium.RoomService.Api.Repositories
 
 		public async Task Update(Booking entity, CancellationToken cancellationToken)
 		{
-			await Task.Run(()=>_dbContext.Bookings.Update(entity),cancellationToken);
+			await Task.Run(() => _dbContext.Bookings.Update(entity), cancellationToken);
 		}
 	}
 }

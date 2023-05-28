@@ -12,6 +12,6 @@ namespace Sanatorium.RoomService.BusinessLogic.Interfaces
 		public Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 		public Task<IEnumerable<Booking>> GetActualBookings(CancellationToken cancellationToken);
 		public Task<IEnumerable<Room>> GetFreeRoomsAsync(DateOnly start, DateOnly end, CancellationToken cancellationToken);
-		
+
 	}
 }

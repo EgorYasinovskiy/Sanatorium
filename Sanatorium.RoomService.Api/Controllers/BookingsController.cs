@@ -69,9 +69,10 @@ namespace Sanatorium.RoomService.Api.Controllers
 		[ProducesResponseType(StatusCodes.Status404NotFound)]
 		public async Task<IActionResult> Update([FromBody] UpdateBookingDTO updateBookingDTO)
 		{
-			var command = new UpdateBooking() { UpdateBookingDTO= updateBookingDTO };
+			var command = new UpdateBooking() { UpdateBookingDTO = updateBookingDTO };
 			await Mediator.Send(command);
 			return NoContent();
+		}
 
 	}
 }

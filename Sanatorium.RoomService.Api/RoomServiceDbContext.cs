@@ -14,12 +14,12 @@ namespace Sanatorium.RoomService.Api
 
 		public async Task<IEnumerable<Booking>> GetActualBookings(CancellationToken cancellationToken)
 		{
-			return await Bookings.Where(x => x.ArrivalDate.AddDays(x.DurationInDays) >= DateOnly.FromDateTime(DateTime.Now)).Include(x=>x.Room).ToListAsync(cancellationToken);
+			return await Bookings.Where(x => x.ArrivalDate.AddDays(x.DurationInDays) >= DateOnly.FromDateTime(DateTime.Now)).Include(x => x.Room).ToListAsync(cancellationToken);
 		}
 		public async Task<IEnumerable<Room>> GetFreeRoomsAsync(DateOnly start, DateOnly end, CancellationToken cancellationToken)
 		{
 			var bookedRooms = await Bookings.Where(x => x.ArrivalDate.AddDays(x.DurationInDays) > start || x.ArrivalDate < end).Select(x => x.RoomId).Distinct().ToListAsync(cancellationToken);
-			return Rooms.Where(x => x.IsFree && !bookedRooms.Contains(x.Id));		
+			return Rooms.Where(x => x.IsFree && !bookedRooms.Contains(x.Id));
 		}
 	}
 }
