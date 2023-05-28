@@ -15,7 +15,7 @@ namespace Sanatorium.RoomService.BusinessLogic.CQRS.Queries.GetFreeRooms
 
 		public async Task<RoomListDTO> Handle(GetFreeRooms request, CancellationToken cancellationToken)
 		{
-			var rooms = await _roomRepository.GetFree(cancellationToken);
+			var rooms = await _roomRepository.GetFree(cancellationToken, request.PeriodStart, request.PeriodEnd);
 			var result = new RoomListDTO()
 			{
 				Rooms = _mapper.Map<IEnumerable<RoomDTO>>(rooms)

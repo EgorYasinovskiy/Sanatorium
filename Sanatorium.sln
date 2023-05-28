@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanatorium.RoomService.Mode
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanatorium.RoomService.BusinessLogic", "Sanatorium.RoomService.BusinessLogic\Sanatorium.RoomService.BusinessLogic.csproj", "{01285B51-976C-4191-9047-01875AB97500}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanatorium.RoomService.Api", "Sanatorium.RoomService.Api\Sanatorium.RoomService.Api.csproj", "{806D29AD-3D15-4E25-97A9-4A516E8B8796}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{01285B51-976C-4191-9047-01875AB97500}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01285B51-976C-4191-9047-01875AB97500}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01285B51-976C-4191-9047-01875AB97500}.Release|Any CPU.Build.0 = Release|Any CPU
+		{806D29AD-3D15-4E25-97A9-4A516E8B8796}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{806D29AD-3D15-4E25-97A9-4A516E8B8796}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{806D29AD-3D15-4E25-97A9-4A516E8B8796}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{806D29AD-3D15-4E25-97A9-4A516E8B8796}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,6 +9,7 @@ namespace Sanatorium.RoomService.BusinessLogic.DTO
 	{
 		public Guid Id { get; set; }
 		public Guid RoomId { get; set; }
+		public int RoomNumber{ get; set; }
 		public DateOnly ArrivalDate { get; set; }
 		public int DurationInDays { get; set; }
 
@@ -18,6 +19,7 @@ namespace Sanatorium.RoomService.BusinessLogic.DTO
 				.ForMember(bdto => bdto.Id, cfg => cfg.MapFrom(b => b.Id))
 				.ForMember(bdto => bdto.RoomId, cfg => cfg.MapFrom(b => b.RoomId))
 				.ForMember(bdto => bdto.ArrivalDate, cfg => cfg.MapFrom(b => b.ArrivalDate))
+				.ForMember(bdto => bdto.RoomNumber, cfg => cfg.MapFrom(b => b.Room.RoomNumber))
 				.ForMember(bdto => bdto.DurationInDays, cfg => cfg.MapFrom(b => b.DurationInDays));
 		}
 	}

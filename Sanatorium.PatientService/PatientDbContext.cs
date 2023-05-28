@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-using Sanatorium.PatientService.Api.EntityConfigurations;
+using Sanatorium.PatientService.BusinessLogic.EntityConfigurations;
 using Sanatorium.PatientService.BusinessLogic.Interfaces;
 using Sanatorium.PatientService.Model;
 

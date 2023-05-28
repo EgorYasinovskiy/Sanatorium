@@ -5,6 +5,6 @@ namespace Sanatorium.RoomService.BusinessLogic.Interfaces
 {
 	public interface IRoomRepository : IRepositoryBase<Room>
 	{
-		public Task<IEnumerable<Room>> GetFree(CancellationToken cancellationToken);
+		public Task<IEnumerable<Room>> GetFree(CancellationToken cancellationToken, DateOnly start, DateOnly end);
 	}
 }
