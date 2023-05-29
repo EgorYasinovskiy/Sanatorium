@@ -11,6 +11,8 @@ namespace Sanatorium.RoomService.BusinessLogic.DTO
 		public Guid PatientId { get; set; }
 		public int OldRoomNumber { get; set; }
 		public int NewRoomNumber { get; set; }
+		public Guid OldRoomId { get; set; }
+		public Guid NewRoomId { get; set; }
 		public DateOnly Date { get; set; }
 		public RoomMoveType MoveType { get; set; }
 
@@ -22,6 +24,8 @@ namespace Sanatorium.RoomService.BusinessLogic.DTO
 				.ForMember(dto => dto.OldRoomNumber, cfg => cfg.MapFrom(rm => rm.OldRoom.RoomNumber))
 				.ForMember(dto => dto.NewRoomNumber, cfg => cfg.MapFrom(rm => rm.NewRoom.RoomNumber))
 				.ForMember(dto => dto.Date, cfg => cfg.MapFrom(rm => rm.Date))
+				.ForMember(dto => dto.OldRoomId, cfg => cfg.MapFrom(rm => rm.OldRoomId))
+				.ForMember(dto => dto.NewRoomId, cfg => cfg.MapFrom(rm => rm.NewRoomId))
 				.ForMember(dto => dto.MoveType, cfg => cfg.MapFrom(rm => rm.MoveType));
 		}
 	}
