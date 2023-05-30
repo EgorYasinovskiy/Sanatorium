@@ -15,7 +15,7 @@ namespace Sanatorium.RoomService.BusinessLogic.CQRS.Queries.GetRoomMove
 
 		public async Task<RoomMoveDTO> Handle(GetRoomMove request, CancellationToken cancellationToken)
 		{
-			var rm = await _roomMoveRepository.GetById(request.Id,cancellationToken);
+			var rm = await _roomMoveRepository.GetById(request.Id, cancellationToken);
 			return _mapper.Map<RoomMoveDTO>(rm);
 		}
 	}

@@ -1,8 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-using Sanatorium.PatientService.Model;
-
-namespace Sanatorium.PatientService.BusinessLogic.Interfaces
+namespace Sanatorium.PatientService.BusinessLogic.EntityConfigurations.Interfaces
 {
 	public interface IPatientDbContext
 	{

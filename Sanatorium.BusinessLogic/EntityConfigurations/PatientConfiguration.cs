@@ -1,8 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-using Sanatorium.PatientService.Model;
-
 namespace Sanatorium.PatientService.BusinessLogic.EntityConfigurations
 {
 	public class PatientConfiguration : IEntityTypeConfiguration<Patient>

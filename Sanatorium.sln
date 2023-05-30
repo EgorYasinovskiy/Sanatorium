@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanatorium.PatientService.Api", "Sanatorium.PatientService\Sanatorium.PatientService.Api.csproj", "{F07A006E-386B-467D-897D-7D0024058A02}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanatorium.PatientService.Model", "Sanatorium.Model\Sanatorium.PatientService.Model.csproj", "{8DFC63CA-C4A8-4EE1-8039-910150A2C0AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanatorium.PatientService.Model", "Sanatorium.PatientService.Model\Sanatorium.PatientService.Model.csproj", "{8DFC63CA-C4A8-4EE1-8039-910150A2C0AF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanatorium.PatientService.BusinessLogic", "Sanatorium.BusinessLogic\Sanatorium.PatientService.BusinessLogic.csproj", "{43201C00-4E98-48F9-889D-EED9884EFEF3}"
 EndProject
@@ -17,11 +17,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanatorium.Common", "Sanato
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanatorium.StaffService.Api", "Sanatorium.StaffService.Api\Sanatorium.StaffService.Api.csproj", "{E4412D41-FE81-4464-B69B-72659847B775}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanatorium.RoomService.Model", "Sanatorium.RoomService.Model\Sanatorium.RoomService.Model.csproj", "{0205C566-ABB3-4C19-8371-025EB3460643}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanatorium.RoomService.Model", "Sanatorium.RoomService.Model\Sanatorium.RoomService.Model.csproj", "{0205C566-ABB3-4C19-8371-025EB3460643}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanatorium.RoomService.BusinessLogic", "Sanatorium.RoomService.BusinessLogic\Sanatorium.RoomService.BusinessLogic.csproj", "{01285B51-976C-4191-9047-01875AB97500}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanatorium.RoomService.BusinessLogic", "Sanatorium.RoomService.BusinessLogic\Sanatorium.RoomService.BusinessLogic.csproj", "{01285B51-976C-4191-9047-01875AB97500}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanatorium.RoomService.Api", "Sanatorium.RoomService.Api\Sanatorium.RoomService.Api.csproj", "{806D29AD-3D15-4E25-97A9-4A516E8B8796}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanatorium.RoomService.Api", "Sanatorium.RoomService.Api\Sanatorium.RoomService.Api.csproj", "{806D29AD-3D15-4E25-97A9-4A516E8B8796}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanatorium.MedicalRecordService.Model", "Sanatorium.MedicalRecordService.Model\Sanatorium.MedicalRecordService.Model.csproj", "{5F915005-A9DA-4735-BB3C-768B6A3381EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanatorium.MedicalRecordService.BusinessLogic", "Sanatorium.MedicalRecordService.BusinessLogic\Sanatorium.MedicalRecordService.BusinessLogic.csproj", "{59C8B069-1531-4A99-A608-A9FB9B842F2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +73,14 @@ Global
 		{806D29AD-3D15-4E25-97A9-4A516E8B8796}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{806D29AD-3D15-4E25-97A9-4A516E8B8796}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{806D29AD-3D15-4E25-97A9-4A516E8B8796}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F915005-A9DA-4735-BB3C-768B6A3381EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F915005-A9DA-4735-BB3C-768B6A3381EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F915005-A9DA-4735-BB3C-768B6A3381EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F915005-A9DA-4735-BB3C-768B6A3381EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59C8B069-1531-4A99-A608-A9FB9B842F2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59C8B069-1531-4A99-A608-A9FB9B842F2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59C8B069-1531-4A99-A608-A9FB9B842F2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59C8B069-1531-4A99-A608-A9FB9B842F2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

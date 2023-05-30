@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="CQRS\Commands\AddPatientDiagnosis\" />
+    <Folder Include="CQRS\Commands\AddProcedureReffal\" />
+    <Folder Include="CQRS\Commands\AddProcedureType\" />
+    <Folder Include="CQRS\Commands\AddTestReffal\" />
+    <Folder Include="CQRS\Commands\AddTestResult\" />
+    <Folder Include="CQRS\Commands\AddTestType\" />
+    <Folder Include="CQRS\Commands\DeletePatientDiagnosis\" />
+    <Folder Include="CQRS\Commands\DeleteProcedureReffal\" />
+    <Folder Include="CQRS\Commands\DeleteProcedureType\" />
+    <Folder Include="CQRS\Commands\DeleteTestReffal\" />
+    <Folder Include="CQRS\Commands\DeleteTestResult\" />
+    <Folder Include="CQRS\Commands\DeleteTestType\" />
+    <Folder Include="CQRS\Commands\UpdatePatientDiagnosis\" />
+    <Folder Include="CQRS\Commands\UpdateProcedureReffal\" />
+    <Folder Include="CQRS\Commands\UpdateProcedureType\" />
+    <Folder Include="CQRS\Commands\UpdateTestReffal\" />
+    <Folder Include="CQRS\Commands\UpdateTestResult\" />
+    <Folder Include="CQRS\Commands\UpdateTestType\" />
+    <Folder Include="CQRS\Queries\GetAllDiagnosis\" />
+    <Folder Include="CQRS\Queries\GetAllPacientDiagnosis\" />
+    <Folder Include="CQRS\Queries\GetProcedureReffalsByPatient\" />
+    <Folder Include="CQRS\Queries\GetProcedureReffalsByType\" />
+    <Folder Include="CQRS\Queries\GetAllProcedureTypes\" />
+    <Folder Include="CQRS\Queries\GetAllTestTypes\" />
+    <Folder Include="CQRS\Queries\GetProcedureRefflalById\" />
+    <Folder Include="CQRS\Queries\GetTestReffalsById\" />
+    <Folder Include="CQRS\Queries\GetTestReffalsByPatient\" />
+    <Folder Include="CQRS\Queries\GetTestReffalsByType\" />
+    <Folder Include="CQRS\Queries\GetTestResultById\" />
+    <Folder Include="DTO\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sanatorium.Common\Sanatorium.Common.csproj" />
+    <ProjectReference Include="..\Sanatorium.MedicalRecordService.Model\Sanatorium.MedicalRecordService.Model.csproj" />
+  </ItemGroup>
+
+</Project>

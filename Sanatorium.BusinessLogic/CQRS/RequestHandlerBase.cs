@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-using Sanatorium.PatientService.BusinessLogic.Interfaces;
+using Sanatorium.PatientService.BusinessLogic.EntityConfigurations.Interfaces;
 
 namespace Sanatorium.PatientService.BusinessLogic.CQRS
 {

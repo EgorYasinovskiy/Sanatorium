@@ -2,7 +2,7 @@
 
 using MediatR;
 
-using Sanatorium.PatientService.BusinessLogic.Interfaces;
+using Sanatorium.PatientService.BusinessLogic.EntityConfigurations.Interfaces;
 
 namespace Sanatorium.PatientService.BusinessLogic.CQRS.Commands.Update
 {

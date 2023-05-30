@@ -3,7 +3,7 @@
 using MediatR;
 
 using Sanatorium.PatientService.BusinessLogic.DTO;
-using Sanatorium.PatientService.BusinessLogic.Interfaces;
+using Sanatorium.PatientService.BusinessLogic.EntityConfigurations.Interfaces;
 
 namespace Sanatorium.PatientService.BusinessLogic.CQRS.Queries.GetAll
 {
