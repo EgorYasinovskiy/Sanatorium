@@ -36,7 +36,6 @@
     <Folder Include="CQRS\Queries\GetTestReffalsByPatient\" />
     <Folder Include="CQRS\Queries\GetTestReffalsByType\" />
     <Folder Include="CQRS\Queries\GetTestResultById\" />
-    <Folder Include="DTO\" />
   </ItemGroup>
 
   <ItemGroup>
