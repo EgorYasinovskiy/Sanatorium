@@ -1,6 +1,6 @@
 ﻿namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Commands.DeleteProcedureReffal
 {
-	internal class DeleteProcedureReffal
+	public class DeleteProcedureReffal
 	{
 	}
 }

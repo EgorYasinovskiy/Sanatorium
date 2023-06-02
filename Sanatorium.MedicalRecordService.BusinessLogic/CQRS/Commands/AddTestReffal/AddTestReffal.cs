@@ -1,6 +1,6 @@
 ﻿namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Commands.AddTestReffal
 {
-	internal class AddTestReffal
+	public class AddTestReffal
 	{
 	}
 }

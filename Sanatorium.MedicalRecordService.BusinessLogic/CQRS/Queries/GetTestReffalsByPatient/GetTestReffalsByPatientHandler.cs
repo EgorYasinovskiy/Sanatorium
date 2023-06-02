@@ -1,6 +1,6 @@
 ﻿namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Queries.GetTestReffalsByPatient
 {
-	internal class GetTestReffalsByPatientHandler
+	public class GetTestReffalsByPatientHandler
 	{
 	}
 }

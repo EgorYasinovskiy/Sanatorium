@@ -1,6 +1,6 @@
 ﻿namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Commands.AddTestType
 {
-	internal class AddTestTypeHandler
+	public class AddTestTypeHandler
 	{
 	}
 }

@@ -1,6 +1,6 @@
 ﻿namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Queries.GetProcedureReffalsByType
 {
-	internal class GetProcedureReffalsByType
+	public class GetProcedureReffalsByType
 	{
 	}
 }

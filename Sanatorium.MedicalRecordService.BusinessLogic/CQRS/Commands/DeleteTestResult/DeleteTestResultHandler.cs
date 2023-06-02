@@ -1,6 +1,6 @@
 ﻿namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Commands.DeleteTestResult
 {
-	internal class DeleteTestResultHandler
+	public class DeleteTestResultHandler
 	{
 	}
 }

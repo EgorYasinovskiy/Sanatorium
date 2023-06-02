@@ -1,6 +1,6 @@
 ﻿namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Queries.GetTestResultById
 {
-	internal class GetTestResultById
+	public class GetTestResultById
 	{
 	}
 }

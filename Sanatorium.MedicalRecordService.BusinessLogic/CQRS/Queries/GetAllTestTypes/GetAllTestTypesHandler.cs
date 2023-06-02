@@ -1,6 +1,6 @@
 ﻿namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Queries.GetAllTestTypes
 {
-	internal class GetAllTestTypesHandler
+	public class GetAllTestTypesHandler
 	{
 	}
 }

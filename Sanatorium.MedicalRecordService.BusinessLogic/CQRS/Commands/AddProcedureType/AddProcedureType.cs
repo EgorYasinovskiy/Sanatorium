@@ -1,6 +1,6 @@
 ﻿namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Commands.AddProcedureType
 {
-	internal class AddProcedureType
+	public class AddProcedureType
 	{
 	}
 }

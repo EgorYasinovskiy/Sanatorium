@@ -1,6 +1,6 @@
 ﻿namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Queries.GetAllDiagnosis
 {
-	internal class GetAllDiagnosisHandler
+	public class GetAllDiagnosisHandler
 	{
 	}
 }

@@ -1,6 +1,6 @@
 ﻿namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Commands.DeletePatientDiagnosis
 {
-	internal class DeletePatientDiagnosis
+	public class DeletePatientDiagnosis
 	{
 	}
 }

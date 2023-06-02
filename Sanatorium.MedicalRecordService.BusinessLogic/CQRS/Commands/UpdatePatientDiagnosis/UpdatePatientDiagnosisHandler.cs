@@ -1,6 +1,6 @@
 ﻿namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Commands.UpdatePatientDiagnosis
 {
-	internal class UpdatePatientDiagnosisHandler
+	public class UpdatePatientDiagnosisHandler
 	{
 	}
 }
