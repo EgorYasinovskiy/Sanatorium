@@ -4,6 +4,7 @@ using MediatR;
 
 using Sanatorium.PatientService.BusinessLogic.DTO;
 using Sanatorium.PatientService.BusinessLogic.EntityConfigurations.Interfaces;
+using Sanatorium.PatientService.Model;
 
 namespace Sanatorium.PatientService.BusinessLogic.CQRS.Commands.RegisterNew
 {

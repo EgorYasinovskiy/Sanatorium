@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Sanatorium.Common\Sanatorium.Common.csproj" />
     <ProjectReference Include="..\Sanatorium.Model\Sanatorium.PatientService.Model.csproj" />
+    <ProjectReference Include="..\Sanatorium.PatientService.Model\Sanatorium.PatientService.Model.csproj" />
   </ItemGroup>
 
 </Project>

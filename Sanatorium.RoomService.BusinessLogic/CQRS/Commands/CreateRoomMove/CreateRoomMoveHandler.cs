@@ -29,7 +29,7 @@ namespace Sanatorium.RoomService.BusinessLogic.CQRS.Commands.CreateRoomMove
 			await _roomMoveRepository.Create(newMove, cancellationToken);
 			await _roomMoveRepository.SaveChanges(cancellationToken);
 
-			return newMove;
+			return _mapper.Map<RoomMoveDTO>(newMove);
 		}
 	}
 }

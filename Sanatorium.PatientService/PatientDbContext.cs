@@ -2,6 +2,7 @@
 
 using Sanatorium.PatientService.BusinessLogic.EntityConfigurations;
 using Sanatorium.PatientService.BusinessLogic.EntityConfigurations.Interfaces;
+using Sanatorium.PatientService.Model;
 
 namespace Sanatorium.PatientService.Api
 {
