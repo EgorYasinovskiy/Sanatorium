@@ -1,6 +1,10 @@
-﻿namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Queries.GetAllProcedureTypes
+﻿using MediatR;
+
+using Sanatorium.MedicalRecordService.BusinessLogic.DTO;
+
+namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Queries.GetAllProcedureTypes
 {
-	public class GetAllProcedureTypes
+	public class GetAllProcedureTypes : IRequest<ProcedureTypesListDTO>
 	{
 	}
 }

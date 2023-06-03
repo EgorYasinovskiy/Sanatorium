@@ -1,6 +1,10 @@
-﻿namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Queries.GetAllTestTypes
+﻿using MediatR;
+
+using Sanatorium.MedicalRecordService.BusinessLogic.DTO;
+
+namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Queries.GetAllTestTypes
 {
-	public class GetAllTestTypes
+	public class GetAllTestTypes : IRequest<TestTypeListDTO>
 	{
 	}
 }
