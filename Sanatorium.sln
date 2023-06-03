@@ -25,7 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanatorium.RoomService.Api"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanatorium.MedicalRecordService.Model", "Sanatorium.MedicalRecordService.Model\Sanatorium.MedicalRecordService.Model.csproj", "{5F915005-A9DA-4735-BB3C-768B6A3381EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanatorium.MedicalRecordService.BusinessLogic", "Sanatorium.MedicalRecordService.BusinessLogic\Sanatorium.MedicalRecordService.BusinessLogic.csproj", "{59C8B069-1531-4A99-A608-A9FB9B842F2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanatorium.MedicalRecordService.BusinessLogic", "Sanatorium.MedicalRecordService.BusinessLogic\Sanatorium.MedicalRecordService.BusinessLogic.csproj", "{59C8B069-1531-4A99-A608-A9FB9B842F2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanatorium.MedicalRecordService.Api", "Sanatorium.MedicalRecordService.Api\Sanatorium.MedicalRecordService.Api.csproj", "{4E6CE556-CA9A-45ED-B9E3-0070A329733E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{59C8B069-1531-4A99-A608-A9FB9B842F2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59C8B069-1531-4A99-A608-A9FB9B842F2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59C8B069-1531-4A99-A608-A9FB9B842F2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E6CE556-CA9A-45ED-B9E3-0070A329733E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E6CE556-CA9A-45ED-B9E3-0070A329733E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E6CE556-CA9A-45ED-B9E3-0070A329733E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E6CE556-CA9A-45ED-B9E3-0070A329733E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
