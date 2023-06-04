@@ -37,6 +37,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RoomService", "RoomService"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StaffService", "StaffService", "{AB1807D2-A797-419D-ABF1-D9E9C453E26B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InventoryService", "InventoryService", "{96671C42-CA9F-44AF-956C-9404BE4681F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanatorium.InventoryService.Model", "Sanatorium.InventoryService.Model\Sanatorium.InventoryService.Model.csproj", "{7F5AC411-CA81-4872-8628-EAA8B46B1B81}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +99,10 @@ Global
 		{4E6CE556-CA9A-45ED-B9E3-0070A329733E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E6CE556-CA9A-45ED-B9E3-0070A329733E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E6CE556-CA9A-45ED-B9E3-0070A329733E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F5AC411-CA81-4872-8628-EAA8B46B1B81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F5AC411-CA81-4872-8628-EAA8B46B1B81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F5AC411-CA81-4872-8628-EAA8B46B1B81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F5AC411-CA81-4872-8628-EAA8B46B1B81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -112,6 +120,7 @@ Global
 		{5F915005-A9DA-4735-BB3C-768B6A3381EA} = {2B763099-A849-4C53-B856-7CCBDCD1188B}
 		{59C8B069-1531-4A99-A608-A9FB9B842F2B} = {2B763099-A849-4C53-B856-7CCBDCD1188B}
 		{4E6CE556-CA9A-45ED-B9E3-0070A329733E} = {2B763099-A849-4C53-B856-7CCBDCD1188B}
+		{7F5AC411-CA81-4872-8628-EAA8B46B1B81} = {96671C42-CA9F-44AF-956C-9404BE4681F1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1984F547-CF5F-4063-8991-BA5D5C352846}
