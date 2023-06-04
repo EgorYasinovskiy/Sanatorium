@@ -4,7 +4,6 @@ using MediatR;
 
 using Sanatorium.MedicalRecordService.BusinessLogic.DTO;
 using Sanatorium.MedicalRecordService.BusinessLogic.Interfaces;
-using Sanatorium.MedicalRecordService.Model;
 
 namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Queries.GetProcedureReffalsByPatient
 {

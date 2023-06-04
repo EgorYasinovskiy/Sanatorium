@@ -20,11 +20,11 @@ namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Commands.AddProcedu
 			{
 				Id = Guid.NewGuid(),
 				Name = request.CreateProcedureTypeDTO.Name,
-				Price= request.CreateProcedureTypeDTO.Price
+				Price = request.CreateProcedureTypeDTO.Price
 			};
 			await _procedureTypeRepository.Create(type, cancellationToken);
 			await _procedureTypeRepository.SaveChanges(cancellationToken);
-			
+
 			return _mapper.Map<ProcedureTypeDTO>(type);
 		}
 	}

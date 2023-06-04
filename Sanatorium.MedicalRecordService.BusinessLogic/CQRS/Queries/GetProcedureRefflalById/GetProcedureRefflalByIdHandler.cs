@@ -19,4 +19,4 @@ namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Queries.GetProcedur
 			return reffal == null ? null : _mapper.Map<ProcedureReffalDTO>(reffal);
 		}
 	}
-} 
+}

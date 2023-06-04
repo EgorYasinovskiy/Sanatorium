@@ -21,7 +21,7 @@ namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Commands.UpdateProc
 				reffal.DateTime = request.Update.DateTime;
 				reffal.PatientId = request.Update.PatientId;
 
-				await _procedureRepository.Update(reffal,cancellationToken);
+				await _procedureRepository.Update(reffal, cancellationToken);
 				await _procedureRepository.SaveChanges(cancellationToken);
 			}
 		}

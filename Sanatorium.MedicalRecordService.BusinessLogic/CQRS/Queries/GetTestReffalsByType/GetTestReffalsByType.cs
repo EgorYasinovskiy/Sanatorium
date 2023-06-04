@@ -7,7 +7,7 @@ namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Queries.GetTestReff
 	public class GetTestReffalsByType : IRequest<TestReffalsListDTO>
 	{
 		public Guid TypeId { get; set; }
-		public DateTime Start { get;set; }
+		public DateTime Start { get; set; }
 		public DateTime End { get; set; }
 	}
 }

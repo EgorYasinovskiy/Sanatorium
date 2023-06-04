@@ -15,12 +15,12 @@ namespace Sanatorium.MedicalRecordService.Api.Repositories
 
 		public async Task Create(TestReffal entity, CancellationToken cancellationToken)
 		{
-			await _context.TestReffals.AddAsync(entity,cancellationToken);
+			await _context.TestReffals.AddAsync(entity, cancellationToken);
 		}
 
 		public async Task DeleteById(Guid id, CancellationToken cancellationToken)
 		{
-			var reffals = await _context.TestReffals.FirstOrDefaultAsync(x=> x.Id == id,cancellationToken);
+			var reffals = await _context.TestReffals.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
 			if (reffals != null)
 			{
 				_context.TestReffals.Remove(reffals);
@@ -40,12 +40,12 @@ namespace Sanatorium.MedicalRecordService.Api.Repositories
 
 		public async Task<IEnumerable<TestReffal>> GetByPatientId(Guid patientId, DateTime start, DateTime end, CancellationToken cancellationToken)
 		{
-			return await _context.TestReffals.Where(x=>x.PatientId == patientId && x.DateTime >= start && x.DateTime <= end).ToListAsync(cancellationToken);
+			return await _context.TestReffals.Where(x => x.PatientId == patientId && x.DateTime >= start && x.DateTime <= end).ToListAsync(cancellationToken);
 		}
 
 		public async Task<IEnumerable<TestReffal>> GetByTypeId(Guid typeId, DateTime start, DateTime end, CancellationToken cancellationToken)
 		{
-			return await _context.TestReffals.Where(x=>x.TestTypeId == typeId && x.DateTime >= start && x.DateTime <= end).ToListAsync(cancellationToken);
+			return await _context.TestReffals.Where(x => x.TestTypeId == typeId && x.DateTime >= start && x.DateTime <= end).ToListAsync(cancellationToken);
 
 		}
 

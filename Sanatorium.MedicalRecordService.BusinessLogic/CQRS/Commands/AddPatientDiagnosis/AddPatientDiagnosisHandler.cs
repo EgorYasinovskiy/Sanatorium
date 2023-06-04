@@ -20,7 +20,7 @@ namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Commands.AddPatient
 			{
 				Date = request.CreatePatientDiagnosisDTO.Date,
 				DiagnosisId = request.CreatePatientDiagnosisDTO.DiagnosisId,
-				Diagnosis = await _diagnosisRepository.GetById(request.CreatePatientDiagnosisDTO.DiagnosisId,cancellationToken),
+				Diagnosis = await _diagnosisRepository.GetById(request.CreatePatientDiagnosisDTO.DiagnosisId, cancellationToken),
 				PatientId = request.CreatePatientDiagnosisDTO.PatientId,
 				Id = Guid.NewGuid()
 			};

@@ -16,12 +16,12 @@ namespace Sanatorium.MedicalRecordService.Api.Repositories
 
 		public async Task Create(TestResult entity, CancellationToken cancellationToken)
 		{
-			await _context.TestResults.AddAsync(entity,cancellationToken);
+			await _context.TestResults.AddAsync(entity, cancellationToken);
 		}
 
 		public async Task DeleteById(Guid id, CancellationToken cancellationToken)
 		{
-			var res = await _context.TestResults.FirstOrDefaultAsync(x => x.Id == id,cancellationToken);
+			var res = await _context.TestResults.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
 			if (res != null)
 			{
 				_context.TestResults.Remove(res);
@@ -35,7 +35,7 @@ namespace Sanatorium.MedicalRecordService.Api.Repositories
 
 		public async Task<TestResult> GetById(Guid id, CancellationToken cancellationToken)
 		{
-			return await _context.TestResults.FirstOrDefaultAsync(x => x.Id == id,cancellationToken);
+			return await _context.TestResults.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
 
 		}
 
@@ -46,7 +46,7 @@ namespace Sanatorium.MedicalRecordService.Api.Repositories
 
 		public async Task Update(TestResult entity, CancellationToken cancellationToken)
 		{
-			await Task.Run(() => _context.TestResults.Update(entity),cancellationToken);
+			await Task.Run(() => _context.TestResults.Update(entity), cancellationToken);
 		}
 	}
 }

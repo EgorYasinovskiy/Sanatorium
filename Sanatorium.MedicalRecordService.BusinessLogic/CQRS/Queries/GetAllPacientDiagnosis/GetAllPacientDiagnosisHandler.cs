@@ -15,7 +15,7 @@ namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Queries.GetAllPacie
 
 		public async Task<PatientDiagnosisListDTO> Handle(GetAllPacientDiagnosis request, CancellationToken cancellationToken)
 		{
-			var diagnoses = await _patientDiagnosisRepository.GetByPatientId(request.PatientId,cancellationToken);
+			var diagnoses = await _patientDiagnosisRepository.GetByPatientId(request.PatientId, cancellationToken);
 			return new PatientDiagnosisListDTO
 			{
 				Diagnoses = _mapper.Map<IEnumerable<PatientDiagnosisDTO>>(diagnoses)

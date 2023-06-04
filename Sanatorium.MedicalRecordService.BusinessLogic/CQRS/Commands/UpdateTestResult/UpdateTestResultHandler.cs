@@ -20,8 +20,8 @@ namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Commands.UpdateTest
 				result.TextResult = request.Update.TextResult;
 				result.ResultFile = request.Update.ResultFile;
 				result.TestReffalID = request.Update.TestReffalID;
-				
-				await _testResultsRepository.Update(result,cancellationToken);
+
+				await _testResultsRepository.Update(result, cancellationToken);
 				await _testResultsRepository.SaveChanges(cancellationToken);
 			}
 		}

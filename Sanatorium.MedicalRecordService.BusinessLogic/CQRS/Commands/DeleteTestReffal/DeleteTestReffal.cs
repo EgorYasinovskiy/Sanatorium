@@ -4,6 +4,6 @@ namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Commands.DeleteTest
 {
 	public class DeleteTestReffal : IRequest
 	{
-		public  Guid Id { get; set; }
+		public Guid Id { get; set; }
 	}
 }

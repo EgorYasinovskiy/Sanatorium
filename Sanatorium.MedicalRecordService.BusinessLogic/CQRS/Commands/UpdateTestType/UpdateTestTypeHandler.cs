@@ -14,8 +14,8 @@ namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Commands.UpdateTest
 
 		public async Task Handle(UpdateTestType request, CancellationToken cancellationToken)
 		{
-			var type = await _testTypesRepository.GetById(request.UpdateTestTypeDTO.Id,cancellationToken);
-			if (type != null) 
+			var type = await _testTypesRepository.GetById(request.UpdateTestTypeDTO.Id, cancellationToken);
+			if (type != null)
 			{
 				type.Price = request.UpdateTestTypeDTO.Price;
 				type.Name = request.UpdateTestTypeDTO.Name;

@@ -15,12 +15,12 @@ namespace Sanatorium.MedicalRecordService.Api.Repositories
 
 		public async Task Create(PatientDaignosis entity, CancellationToken cancellationToken)
 		{
-			await _context.PatientDaignoses.AddAsync(entity,cancellationToken);
+			await _context.PatientDaignoses.AddAsync(entity, cancellationToken);
 		}
 
 		public async Task DeleteById(Guid id, CancellationToken cancellationToken)
 		{
-			var diagnosis = await _context.PatientDaignoses.FirstOrDefaultAsync(x=>x.Id == id,cancellationToken);
+			var diagnosis = await _context.PatientDaignoses.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
 			if (diagnosis != null)
 			{
 				_context.PatientDaignoses.Remove(diagnosis);
@@ -29,7 +29,7 @@ namespace Sanatorium.MedicalRecordService.Api.Repositories
 
 		public async Task<IEnumerable<PatientDaignosis>> GetAll(CancellationToken cancellationToken)
 		{
-			return await _context.PatientDaignoses.Include(x=>x.Diagnosis).ToListAsync(cancellationToken);
+			return await _context.PatientDaignoses.Include(x => x.Diagnosis).ToListAsync(cancellationToken);
 		}
 
 		public async Task<PatientDaignosis> GetById(Guid id, CancellationToken cancellationToken)
@@ -50,7 +50,7 @@ namespace Sanatorium.MedicalRecordService.Api.Repositories
 
 		public async Task Update(PatientDaignosis entity, CancellationToken cancellationToken)
 		{
-			await Task.Run(()=>_context.PatientDaignoses.Update(entity),cancellationToken);
+			await Task.Run(() => _context.PatientDaignoses.Update(entity), cancellationToken);
 		}
 	}
 }

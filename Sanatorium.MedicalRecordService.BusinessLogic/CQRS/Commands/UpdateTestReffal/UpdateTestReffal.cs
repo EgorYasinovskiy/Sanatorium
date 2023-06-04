@@ -6,6 +6,6 @@ namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Commands.UpdateTest
 {
 	public class UpdateTestReffal : IRequest
 	{
-		public UpdateTestReffalDTO UpdateTestReffalDTO { get;set; }
+		public UpdateTestReffalDTO UpdateTestReffalDTO { get; set; }
 	}
 }

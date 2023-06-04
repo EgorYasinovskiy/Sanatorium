@@ -14,7 +14,7 @@ namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Commands.DeleteProc
 
 		public async Task Handle(DeleteProcedureType request, CancellationToken cancellationToken)
 		{
-			await _procedureTypeRepository.DeleteById(request.Id,cancellationToken);
+			await _procedureTypeRepository.DeleteById(request.Id, cancellationToken);
 			await _procedureTypeRepository.SaveChanges(cancellationToken);
 		}
 	}

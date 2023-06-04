@@ -14,7 +14,7 @@ namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Commands.UpdateProc
 
 		public async Task Handle(UpdateProcedureType request, CancellationToken cancellationToken)
 		{
-			var ptype = await _procedureTypeRepository.GetById(request.Update.Id,cancellationToken);
+			var ptype = await _procedureTypeRepository.GetById(request.Update.Id, cancellationToken);
 			if (ptype != null)
 			{
 				ptype.Price = request.Update.Price;

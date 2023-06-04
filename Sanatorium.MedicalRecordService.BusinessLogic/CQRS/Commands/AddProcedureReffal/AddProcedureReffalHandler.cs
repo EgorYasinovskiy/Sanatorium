@@ -22,7 +22,7 @@ namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Commands.AddProcedu
 				Id = Guid.NewGuid(),
 				PatientId = request.CreateProceduralReffalDTO.PatientId,
 				ProcedureTypeId = request.CreateProceduralReffalDTO.ProcedureTypeId,
-				ProcedureType = await _procedureTypeRepository.GetById(request.CreateProceduralReffalDTO.ProcedureTypeId,cancellationToken),
+				ProcedureType = await _procedureTypeRepository.GetById(request.CreateProceduralReffalDTO.ProcedureTypeId, cancellationToken),
 			};
 
 			await _procedureRepository.Create(reffal, cancellationToken);

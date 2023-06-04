@@ -4,6 +4,6 @@ namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Commands.DeleteProc
 {
 	public class DeleteProcedureType : IRequest
 	{
-		public Guid Id { get;set; }
+		public Guid Id { get; set; }
 	}
 }

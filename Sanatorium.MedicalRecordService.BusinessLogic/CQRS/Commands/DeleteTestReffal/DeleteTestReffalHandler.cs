@@ -14,7 +14,7 @@ namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Commands.DeleteTest
 
 		public async Task Handle(DeleteTestReffal request, CancellationToken cancellationToken)
 		{
-			await _testRepository.DeleteById(request.Id,cancellationToken);
+			await _testRepository.DeleteById(request.Id, cancellationToken);
 			await _testRepository.SaveChanges(cancellationToken);
 		}
 	}

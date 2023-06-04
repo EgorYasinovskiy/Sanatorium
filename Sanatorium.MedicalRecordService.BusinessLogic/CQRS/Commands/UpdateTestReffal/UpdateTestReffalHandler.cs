@@ -14,15 +14,15 @@ namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Commands.UpdateTest
 
 		public async Task Handle(UpdateTestReffal request, CancellationToken cancellationToken)
 		{
-			var test = await _testRepository.GetById(request.UpdateTestReffalDTO.Id,cancellationToken);
+			var test = await _testRepository.GetById(request.UpdateTestReffalDTO.Id, cancellationToken);
 			if (test != null)
 			{
 				test.TestResultId = request.UpdateTestReffalDTO.TestResultId;
 				test.TestTypeId = request.UpdateTestReffalDTO.TestTypeId;
-				test.DateTime =	request.UpdateTestReffalDTO.DateTime;
+				test.DateTime = request.UpdateTestReffalDTO.DateTime;
 				test.PatientId = request.UpdateTestReffalDTO.PatientId;
 
-				await _testRepository.Update(test,cancellationToken);
+				await _testRepository.Update(test, cancellationToken);
 				await _testRepository.SaveChanges(cancellationToken);
 			}
 		}

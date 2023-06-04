@@ -20,9 +20,9 @@ namespace Sanatorium.MedicalRecordService.Api.Repositories
 
 		public async Task DeleteById(Guid id, CancellationToken cancellationToken)
 		{
-			var type = await _context.ProcedureTypes.FirstOrDefaultAsync(t => t.Id == id,cancellationToken); 
-			if (type != null) 
-			{ 
+			var type = await _context.ProcedureTypes.FirstOrDefaultAsync(t => t.Id == id, cancellationToken);
+			if (type != null)
+			{
 				_context.ProcedureTypes.Remove(type);
 			}
 		}
@@ -34,7 +34,7 @@ namespace Sanatorium.MedicalRecordService.Api.Repositories
 
 		public async Task<ProcedureType> GetById(Guid id, CancellationToken cancellationToken)
 		{
-			return await _context.ProcedureTypes.FirstOrDefaultAsync(t => t.Id == id,cancellationToken);
+			return await _context.ProcedureTypes.FirstOrDefaultAsync(t => t.Id == id, cancellationToken);
 		}
 
 		public async Task SaveChanges(CancellationToken cancellationToken)

@@ -2,6 +2,6 @@
 {
 	public class TestReffalsListDTO
 	{
-		public IEnumerable<TestReffalDTO> TestReffals { get; set;}
+		public IEnumerable<TestReffalDTO> TestReffals { get; set; }
 	}
 }

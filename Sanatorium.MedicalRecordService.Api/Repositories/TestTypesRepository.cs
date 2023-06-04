@@ -15,12 +15,12 @@ namespace Sanatorium.MedicalRecordService.Api.Repositories
 
 		public async Task Create(TestType entity, CancellationToken cancellationToken)
 		{
-			await _context.TestTypes.AddAsync(entity,cancellationToken);
+			await _context.TestTypes.AddAsync(entity, cancellationToken);
 		}
 
 		public async Task DeleteById(Guid id, CancellationToken cancellationToken)
 		{
-			var type = await _context.TestTypes.FirstOrDefaultAsync(x=>x.Id == id, cancellationToken);
+			var type = await _context.TestTypes.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
 			if (type != null)
 			{
 				_context.TestTypes.Remove(type);
@@ -34,7 +34,7 @@ namespace Sanatorium.MedicalRecordService.Api.Repositories
 
 		public async Task<TestType> GetById(Guid id, CancellationToken cancellationToken)
 		{
-			return await _context.TestTypes.FirstOrDefaultAsync(x=>x.Id == id, cancellationToken);
+			return await _context.TestTypes.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
 
 		}
 
