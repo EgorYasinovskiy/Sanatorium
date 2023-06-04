@@ -1,7 +1,7 @@
 ﻿using Sanatorium.Common;
 using Sanatorium.PatientService.Model;
 
-namespace Sanatorium.PatientService.BusinessLogic.EntityConfigurations.Interfaces
+namespace Sanatorium.PatientService.BusinessLogic.Interfaces
 {
 	public interface IPatientRepository : IRepositoryBase<Patient>
 	{

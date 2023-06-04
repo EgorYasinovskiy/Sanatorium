@@ -2,7 +2,7 @@ using AutoMapper;
 
 using Sanatorium.StaffService.BusinessLogic.Interfaces;
 
-namespace Sanatorium.StaffService.BusinessLogic
+namespace Sanatorium.StaffService.BusinessLogic.CQRS
 {
 	public class RequestHandlerBase
 	{
