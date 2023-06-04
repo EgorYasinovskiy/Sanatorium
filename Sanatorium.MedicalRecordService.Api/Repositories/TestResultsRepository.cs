@@ -5,11 +5,11 @@ using Sanatorium.MedicalRecordService.Model;
 
 namespace Sanatorium.MedicalRecordService.Api.Repositories
 {
-	public class TestResultRepository : ITestResultsRepository
+	public class TestResultsRepository : ITestResultsRepository
 	{
 
 		private readonly IMedicalRecordsServiceDbContext _context;
-		public TestResultRepository(IMedicalRecordsServiceDbContext context)
+		public TestResultsRepository(IMedicalRecordsServiceDbContext context)
 		{
 			_context = context;
 		}
