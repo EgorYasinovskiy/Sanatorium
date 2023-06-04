@@ -20,7 +20,6 @@
     <Folder Include="CQRS\Queries\GetRecordsByDateRange\" />
     <Folder Include="CQRS\Queries\GetRecordsByItem\" />
     <Folder Include="DTO\" />
-    <Folder Include="Interfaces\" />
   </ItemGroup>
 
 </Project>

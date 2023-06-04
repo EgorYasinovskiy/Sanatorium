@@ -7,7 +7,7 @@ using Sanatorium.MedicalRecordService.BusinessLogic.Interfaces;
 
 namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Queries.GetTestTypeById
 {
-	internal class GetTestTypeByIdHandler : RequestHandlerBase, IRequestHandler<GetTestTypeById, TestTypeDTO>
+	public class GetTestTypeByIdHandler : RequestHandlerBase, IRequestHandler<GetTestTypeById, TestTypeDTO>
 	{
 		public GetTestTypeByIdHandler(IDiagnosisRepository diagnosisRepository, IPatientDiagnosisRepository patientDiagnosisRepository, ITestReffalsRepository testRepository, ITestResultsRepository testResultsRepository, ITestTypesRepository testTypesRepository, IProcedureReffalsRepository procedureRepository, IProcedureTypeRepository procedureTypeRepository, IMapper mapper) : base(diagnosisRepository, patientDiagnosisRepository, testRepository, testResultsRepository, testTypesRepository, procedureRepository, procedureTypeRepository, mapper)
 		{
