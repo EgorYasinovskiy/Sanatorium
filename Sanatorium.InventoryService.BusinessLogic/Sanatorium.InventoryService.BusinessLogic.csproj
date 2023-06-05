@@ -7,22 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="CQRS\Commands\AddItemRecord\" />
-    <Folder Include="CQRS\Commands\AddItem\" />
-    <Folder Include="CQRS\Commands\DeleteItemRecord\" />
-    <Folder Include="CQRS\Commands\DeleteItem\" />
-    <Folder Include="CQRS\Commands\UpdateItemRecord\" />
-    <Folder Include="CQRS\Commands\UpdateItem\" />
-    <Folder Include="CQRS\Queries\GetInventoryList\" />
-    <Folder Include="CQRS\Queries\GetInventoryResume\" />
-    <Folder Include="CQRS\Queries\GetItemById\" />
-    <Folder Include="CQRS\Queries\GetMissingItems\" />
-    <Folder Include="CQRS\Queries\GetRecordsByDateRange\" />
-    <Folder Include="CQRS\Queries\GetRecordsByItem\" />
-    <Folder Include="DTO\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="MediatR" Version="12.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
   </ItemGroup>
 
