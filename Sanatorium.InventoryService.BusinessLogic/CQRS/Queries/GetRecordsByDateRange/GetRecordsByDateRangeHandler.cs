@@ -22,9 +22,9 @@ namespace Sanatorium.InventoryService.BusinessLogic.CQRS.Queries.GetRecordsByDat
 			return new InventoryRecordListDTO()
 			{
 				InventoryRecords = _mapper.Map<IEnumerable<InventoryRecordDTO>>(records);
-			}
 		}
 	}
+}
 
 
 }

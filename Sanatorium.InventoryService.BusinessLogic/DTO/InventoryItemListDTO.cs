@@ -2,6 +2,6 @@
 {
 	public class InventoryItemListDTO
 	{
-		public IEnumerable<InventoryItemDTO> Items { get;set; }
+		public IEnumerable<InventoryItemDTO> Items { get; set; }
 	}
 }

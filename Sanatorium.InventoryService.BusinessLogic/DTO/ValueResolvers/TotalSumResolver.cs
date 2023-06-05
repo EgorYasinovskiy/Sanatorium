@@ -8,7 +8,7 @@ namespace Sanatorium.InventoryService.BusinessLogic.DTO.ValueResolvers
 	{
 		public double Resolve(InventoryItem source, InventoryItemShortDTO destination, double destMember, ResolutionContext context)
 		{
-			if(source.Quantity < source.RequiredQuantity)
+			if (source.Quantity < source.RequiredQuantity)
 			{
 				return source.Price * (source.RequiredQuantity - source.Quantity);
 			}

@@ -15,7 +15,7 @@ namespace Sanatorium.InventoryService.BusinessLogic.CQRS.Queries.GetItemById
 
 		public async Task<InventoryItemDTO> Handle(GetItemById request, CancellationToken cancellationToken)
 		{
-			return _mapper.Map<InventoryItemDTO>( await _itemsRepository.GetById(request.Id, cancellationToken));
+			return _mapper.Map<InventoryItemDTO>(await _itemsRepository.GetById(request.Id, cancellationToken));
 		}
 	}
 }

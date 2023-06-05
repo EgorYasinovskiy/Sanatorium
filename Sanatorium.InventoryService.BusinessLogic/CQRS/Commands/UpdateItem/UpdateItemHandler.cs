@@ -15,14 +15,14 @@ namespace Sanatorium.InventoryService.BusinessLogic.CQRS.Commands.UpdateItem
 		public async Task Handle(UpdateItem request, CancellationToken cancellationToken)
 		{
 			var item = await _itemsRepository.GetById(request.UpdateItemDTO.Id, cancellationToken);
-			if(item != null)
+			if (item != null)
 			{
 				item.Price = request.UpdateItemDTO.Price;
 				item.RequiredQuantity = request.UpdateItemDTO.RequiredQuantity;
 				item.Quantity = request.UpdateItemDTO.Quantity;
 				item.Name = request.UpdateItemDTO.Name;
 
-				await _itemsRepository.Update(item,cancellationToken);
+				await _itemsRepository.Update(item, cancellationToken);
 				await _itemsRepository.SaveChanges(cancellationToken);
 			}
 		}
