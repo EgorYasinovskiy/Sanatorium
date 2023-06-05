@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanatorium.InventoryService
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanatorium.InventoryService.BusinessLogic", "Sanatorium.InventoryService.BusinessLogic\Sanatorium.InventoryService.BusinessLogic.csproj", "{268CA899-EA22-4BB0-8573-AE6AACBA5177}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanatorium.InventoryService.Api", "Sanatorium.InventoryService.Api\Sanatorium.InventoryService.Api.csproj", "{F56F523B-24DF-45CD-8F9B-DA4CFC80337B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -109,6 +111,10 @@ Global
 		{268CA899-EA22-4BB0-8573-AE6AACBA5177}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{268CA899-EA22-4BB0-8573-AE6AACBA5177}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{268CA899-EA22-4BB0-8573-AE6AACBA5177}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F56F523B-24DF-45CD-8F9B-DA4CFC80337B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F56F523B-24DF-45CD-8F9B-DA4CFC80337B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F56F523B-24DF-45CD-8F9B-DA4CFC80337B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F56F523B-24DF-45CD-8F9B-DA4CFC80337B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -128,6 +134,7 @@ Global
 		{4E6CE556-CA9A-45ED-B9E3-0070A329733E} = {2B763099-A849-4C53-B856-7CCBDCD1188B}
 		{7F5AC411-CA81-4872-8628-EAA8B46B1B81} = {96671C42-CA9F-44AF-956C-9404BE4681F1}
 		{268CA899-EA22-4BB0-8573-AE6AACBA5177} = {96671C42-CA9F-44AF-956C-9404BE4681F1}
+		{F56F523B-24DF-45CD-8F9B-DA4CFC80337B} = {96671C42-CA9F-44AF-956C-9404BE4681F1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1984F547-CF5F-4063-8991-BA5D5C352846}
