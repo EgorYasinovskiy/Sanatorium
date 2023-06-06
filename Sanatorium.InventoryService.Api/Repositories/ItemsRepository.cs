@@ -16,13 +16,13 @@ namespace Sanatorium.InventoryService.Api.Repositories
 
 		public async Task Create(InventoryItem entity, CancellationToken cancellationToken)
 		{
-			await _context.InventoryItems.AddAsync(entity,cancellationToken);
+			await _context.InventoryItems.AddAsync(entity, cancellationToken);
 		}
 
 		public async Task DeleteById(Guid id, CancellationToken cancellationToken)
 		{
-			var item = await _context.InventoryItems.FirstOrDefaultAsync(x => x.Id == id,cancellationToken);
-			if (item != null) 
+			var item = await _context.InventoryItems.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+			if (item != null)
 				_context.InventoryItems.Remove(item);
 		}
 
@@ -33,13 +33,13 @@ namespace Sanatorium.InventoryService.Api.Repositories
 
 		public async Task<InventoryItem> GetById(Guid id, CancellationToken cancellationToken)
 		{
-			var item = await _context.InventoryItems.FirstOrDefaultAsync(x => x.Id == id,cancellationToken);
+			var item = await _context.InventoryItems.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
 			return item;
 		}
 
 		public async Task<IEnumerable<InventoryItem>> GetMissing(CancellationToken cancellationToken)
 		{
-			return await _context.InventoryItems.Where(x=>x.Quantity < x.RequiredQuantity).ToListAsync(cancellationToken);
+			return await _context.InventoryItems.Where(x => x.Quantity < x.RequiredQuantity).ToListAsync(cancellationToken);
 		}
 
 		public async Task SaveChanges(CancellationToken cancellationToken)
@@ -49,7 +49,7 @@ namespace Sanatorium.InventoryService.Api.Repositories
 
 		public async Task Update(InventoryItem entity, CancellationToken cancellationToken)
 		{
-			await Task.Run(() => _context.InventoryItems.Update(entity),cancellationToken);
+			await Task.Run(() => _context.InventoryItems.Update(entity), cancellationToken);
 		}
 	}
 }

@@ -11,7 +11,7 @@ using Sanatorium.InventoryService.BusinessLogic.DTO;
 
 namespace Sanatorium.InventoryService.Api.Controllers
 {
-	[Route("api/[controller]/[action]")]
+	[Route("api/[controller]")]
 	[Produces("application/json")]
 	public class ItemsController : BaseController
 	{

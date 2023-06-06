@@ -16,12 +16,12 @@ namespace Sanatorium.InventoryService.Api.Repositories
 
 		public async Task Create(InventoryHistoryRecord entity, CancellationToken cancellationToken)
 		{
-			await _context.HistoryRecords.AddAsync(entity,cancellationToken);
+			await _context.HistoryRecords.AddAsync(entity, cancellationToken);
 		}
 
 		public async Task DeleteById(Guid id, CancellationToken cancellationToken)
 		{
-			var record = await _context.HistoryRecords.FirstOrDefaultAsync(x=> x.Id == id, cancellationToken);
+			var record = await _context.HistoryRecords.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
 			if (record != null)
 				_context.HistoryRecords.Remove(record);
 		}
@@ -33,19 +33,19 @@ namespace Sanatorium.InventoryService.Api.Repositories
 
 		public async Task<IEnumerable<InventoryHistoryRecord>> GetByDateRange(DateTime from, DateTime to, CancellationToken cancellationToken)
 		{
-			return await _context.HistoryRecords.Where(x=>x.DateTime >= from && x.DateTime <= to).ToListAsync(cancellationToken);
+			return await _context.HistoryRecords.Where(x => x.DateTime >= from && x.DateTime <= to).ToListAsync(cancellationToken);
 		}
 
 		public async Task<InventoryHistoryRecord> GetById(Guid id, CancellationToken cancellationToken)
 		{
-			var record = await _context.HistoryRecords.FirstOrDefaultAsync(x=> x.Id == id, cancellationToken);
+			var record = await _context.HistoryRecords.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
 			return record;
 
 		}
 
 		public async Task<IEnumerable<InventoryHistoryRecord>> GetByItem(Guid itemId, CancellationToken cancellationToken)
 		{
-			return await _context.HistoryRecords.Where(x=>x.ItemId == itemId).ToListAsync(cancellationToken);
+			return await _context.HistoryRecords.Where(x => x.ItemId == itemId).ToListAsync(cancellationToken);
 		}
 
 		public async Task SaveChanges(CancellationToken cancellationToken)
