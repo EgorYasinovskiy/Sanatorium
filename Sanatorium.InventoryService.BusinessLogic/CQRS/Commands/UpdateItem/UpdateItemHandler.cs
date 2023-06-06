@@ -27,3 +27,4 @@ namespace Sanatorium.InventoryService.BusinessLogic.CQRS.Commands.UpdateItem
 			}
 		}
 	}
+}

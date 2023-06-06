@@ -6,6 +6,6 @@ namespace Sanatorium.InventoryService.BusinessLogic.CQRS.Queries.GetRecordById
 {
 	public class GetRecordById : IRequest<InventoryRecordDTO>
 	{
-		public Guid Id { get; set; }	
+		public Guid Id { get; set; }
 	}
 }

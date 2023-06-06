@@ -7,7 +7,7 @@ using Sanatorium.InventoryService.BusinessLogic.Interfaces;
 
 namespace Sanatorium.InventoryService.BusinessLogic.CQRS.Queries.GetRecordsByDateRange
 {
-	public class GetRecordsByDateRangeHandler : RequestHandlerBase, IRequestHandler<GetRecordsByDateRange, InventoryRecordListDTO
+	public class GetRecordsByDateRangeHandler : RequestHandlerBase, IRequestHandler<GetRecordsByDateRange, InventoryRecordListDTO>
 	{
 		public GetRecordsByDateRangeHandler(IItemsRepository itemsRepository, IRecordsRepository recordsRepository, IMapper mapper) : base(itemsRepository, recordsRepository, mapper)
 		{
@@ -21,10 +21,8 @@ namespace Sanatorium.InventoryService.BusinessLogic.CQRS.Queries.GetRecordsByDat
 				return null;
 			return new InventoryRecordListDTO()
 			{
-				InventoryRecords = _mapper.Map<IEnumerable<InventoryRecordDTO>>(records);
+				InventoryRecords = _mapper.Map<IEnumerable<InventoryRecordDTO>>(records)
+			};
 		}
 	}
-}
-
-
 }
