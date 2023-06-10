@@ -20,25 +20,16 @@ namespace Sanatorium.PatientService.BusinessLogic.DTO
 
 		public void CreateMapping(Profile profile)
 		{
-			profile.CreateMap<Patient, PatientDTO>().
-				ForMember(pdto => pdto.Id
-				, cfg => cfg.MapFrom(p => p.Id))
-				.ForMember(pdto => pdto.FirstName
-				, cfg => cfg.MapFrom(p => p.FirstName))
-				.ForMember(pdto => pdto.LastName
-				, cfg => cfg.MapFrom(p => p.LastName))
-				.ForMember(pdto => pdto.MiddleName
-				, cfg => cfg.MapFrom(p => p.MiddleName))
-				.ForMember(pdto => pdto.BirthDate
-				, cfg => cfg.MapFrom(p => p.BirthDate))
-				.ForMember(pdto => pdto.PhoneNumber
-				, cfg => cfg.MapFrom(p => p.PhoneNumber))
-				.ForMember(pdto => pdto.DateRegistered
-				, cfg => cfg.MapFrom(p => p.DateRegistered))
-				.ForMember(pdto => pdto.DateDischarged
-				, cfg => cfg.MapFrom(p => p.DateDischarged))
-				.ForMember(pdto => pdto.Discharged
-				, cfg => cfg.MapFrom(p => p.Discharged));
+			profile.CreateMap<Patient, PatientDTO>()
+				.ForMember(pdto => pdto.Id, cfg => cfg.MapFrom(p => p.Id))
+				.ForMember(pdto => pdto.FirstName, cfg => cfg.MapFrom(p => p.FirstName))
+				.ForMember(pdto => pdto.LastName, cfg => cfg.MapFrom(p => p.LastName))
+				.ForMember(pdto => pdto.MiddleName, cfg => cfg.MapFrom(p => p.MiddleName))
+				.ForMember(pdto => pdto.BirthDate, cfg => cfg.MapFrom(p => p.BirthDate))
+				.ForMember(pdto => pdto.PhoneNumber, cfg => cfg.MapFrom(p => p.PhoneNumber))
+				.ForMember(pdto => pdto.DateRegistered, cfg => cfg.MapFrom(p => p.DateRegistered))
+				.ForMember(pdto => pdto.DateDischarged, cfg => cfg.MapFrom(p => p.DateDischarged))
+				.ForMember(pdto => pdto.Discharged, cfg => cfg.MapFrom(p => p.Discharged));
 		}
 	}
 }

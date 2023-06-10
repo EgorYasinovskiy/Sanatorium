@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 
 using Sanatorium.Common.Mappings;
+using Sanatorium.StaffService.BusinessLogic.DTO.ValueResolvers;
 using Sanatorium.StaffService.Model;
 
 namespace Sanatorium.StaffService.BusinessLogic.DTO
@@ -44,7 +45,7 @@ namespace Sanatorium.StaffService.BusinessLogic.DTO
 				ForMember(sdto => sdto.ManagerId,
 				  cfg => cfg.MapFrom(s => s.ManagerId)).
 				ForMember(sdto => sdto.ManagerName,
-				  cfg => cfg.MapFrom(s => s.Manager == null ? s.Manager.GetDisplayString() : "")).
+				  cfg => cfg.MapFrom<ManagerNameValueResolver>()).
 				ForMember(sdto => sdto.DayWork,
 				  cfg => cfg.MapFrom(s => s.DayWork)).
 				ForMember(sdto => sdto.DayHoliday,

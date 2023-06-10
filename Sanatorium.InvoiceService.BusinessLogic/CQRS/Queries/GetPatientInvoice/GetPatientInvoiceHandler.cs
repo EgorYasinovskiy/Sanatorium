@@ -11,9 +11,15 @@ namespace Sanatorium.InvoiceService.BusinessLogic.CQRS.Queries.GetPatientInvoice
 		{
 		}
 
-		public Task<InvoiceDTO> Handle(GetPatientInvoice request, CancellationToken cancellationToken)
+		public async Task<InvoiceDTO> Handle(GetPatientInvoice request, CancellationToken cancellationToken)
 		{
-			throw new NotImplementedException();
+
+			if (!request.RefreshData)
+			{
+				var res = await _invoiceRepository.GetInfoiceByPatientIdAndDate(request.PatientId, request.DateFrom, cancellationToken);
+				if (res != null)
+					return
+			}
 		}
 	}
 }
