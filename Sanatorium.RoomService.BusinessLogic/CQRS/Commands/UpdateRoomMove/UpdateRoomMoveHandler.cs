@@ -18,8 +18,7 @@ namespace Sanatorium.RoomService.BusinessLogic.CQRS.Commands.UpdateRoomMove
 			if (roomMove == null)
 				return;
 			roomMove.MoveType = request.UpdateRoomMoveDTO.MoveType;
-			roomMove.NewRoomId = request.UpdateRoomMoveDTO.NewRoomId;
-			roomMove.OldRoomId = request.UpdateRoomMoveDTO.OldRoomId;
+			roomMove.RoomId = request.UpdateRoomMoveDTO.RoomId;
 			roomMove.PatientId = request.UpdateRoomMoveDTO.PatientId;
 			roomMove.Date = request.UpdateRoomMoveDTO.Date;
 			await _roomMoveRepository.Update(roomMove, cancellationToken);

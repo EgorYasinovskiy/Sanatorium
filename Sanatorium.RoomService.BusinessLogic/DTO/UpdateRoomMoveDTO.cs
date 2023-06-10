@@ -6,8 +6,7 @@ namespace Sanatorium.RoomService.BusinessLogic.DTO
 	{
 		public Guid Id { get; set; }
 		public Guid PatientId { get; set; }
-		public Guid? OldRoomId { get; set; }
-		public Guid? NewRoomId { get; set; }
+		public Guid RoomId { get; set; }
 		public DateOnly Date { get; set; }
 		public RoomMoveType MoveType { get; set; }
 	}

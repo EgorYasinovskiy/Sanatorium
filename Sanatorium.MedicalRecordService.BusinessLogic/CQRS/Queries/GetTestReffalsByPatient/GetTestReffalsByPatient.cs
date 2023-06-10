@@ -1,7 +1,6 @@
 ﻿using MediatR;
 
 using Sanatorium.MedicalRecordService.BusinessLogic.DTO;
-
 namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Queries.GetTestReffalsByPatient
 {
 	public class GetTestReffalsByPatient : IRequest<TestReffalsListDTO>

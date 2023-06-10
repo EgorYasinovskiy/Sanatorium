@@ -39,11 +39,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StaffService", "StaffServic
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InventoryService", "InventoryService", "{96671C42-CA9F-44AF-956C-9404BE4681F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanatorium.InventoryService.Model", "Sanatorium.InventoryService.Model\Sanatorium.InventoryService.Model.csproj", "{7F5AC411-CA81-4872-8628-EAA8B46B1B81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanatorium.InventoryService.Model", "Sanatorium.InventoryService.Model\Sanatorium.InventoryService.Model.csproj", "{7F5AC411-CA81-4872-8628-EAA8B46B1B81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanatorium.InventoryService.BusinessLogic", "Sanatorium.InventoryService.BusinessLogic\Sanatorium.InventoryService.BusinessLogic.csproj", "{268CA899-EA22-4BB0-8573-AE6AACBA5177}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanatorium.InventoryService.BusinessLogic", "Sanatorium.InventoryService.BusinessLogic\Sanatorium.InventoryService.BusinessLogic.csproj", "{268CA899-EA22-4BB0-8573-AE6AACBA5177}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanatorium.InventoryService.Api", "Sanatorium.InventoryService.Api\Sanatorium.InventoryService.Api.csproj", "{F56F523B-24DF-45CD-8F9B-DA4CFC80337B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanatorium.InventoryService.Api", "Sanatorium.InventoryService.Api\Sanatorium.InventoryService.Api.csproj", "{F56F523B-24DF-45CD-8F9B-DA4CFC80337B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InvoiceService", "InvoiceService", "{EA2BD940-EDF2-4628-AC1A-D39D61D60467}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanatorium.InvoiceService.BusinessLogic", "Sanatorium.InvoiceService.BusinessLogic\Sanatorium.InvoiceService.BusinessLogic.csproj", "{319B9B7C-0403-47ED-B0D0-4E024E7C6279}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanatorium.InvoiceService.Model", "Sanatorium.InvoiceServoce.Model\Sanatorium.InvoiceService.Model.csproj", "{210CB085-7A8B-45D9-9C2D-20FA2EA68F45}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -115,6 +121,14 @@ Global
 		{F56F523B-24DF-45CD-8F9B-DA4CFC80337B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F56F523B-24DF-45CD-8F9B-DA4CFC80337B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F56F523B-24DF-45CD-8F9B-DA4CFC80337B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{319B9B7C-0403-47ED-B0D0-4E024E7C6279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{319B9B7C-0403-47ED-B0D0-4E024E7C6279}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{319B9B7C-0403-47ED-B0D0-4E024E7C6279}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{319B9B7C-0403-47ED-B0D0-4E024E7C6279}.Release|Any CPU.Build.0 = Release|Any CPU
+		{210CB085-7A8B-45D9-9C2D-20FA2EA68F45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{210CB085-7A8B-45D9-9C2D-20FA2EA68F45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{210CB085-7A8B-45D9-9C2D-20FA2EA68F45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{210CB085-7A8B-45D9-9C2D-20FA2EA68F45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -135,6 +149,8 @@ Global
 		{7F5AC411-CA81-4872-8628-EAA8B46B1B81} = {96671C42-CA9F-44AF-956C-9404BE4681F1}
 		{268CA899-EA22-4BB0-8573-AE6AACBA5177} = {96671C42-CA9F-44AF-956C-9404BE4681F1}
 		{F56F523B-24DF-45CD-8F9B-DA4CFC80337B} = {96671C42-CA9F-44AF-956C-9404BE4681F1}
+		{319B9B7C-0403-47ED-B0D0-4E024E7C6279} = {EA2BD940-EDF2-4628-AC1A-D39D61D60467}
+		{210CB085-7A8B-45D9-9C2D-20FA2EA68F45} = {EA2BD940-EDF2-4628-AC1A-D39D61D60467}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1984F547-CF5F-4063-8991-BA5D5C352846}

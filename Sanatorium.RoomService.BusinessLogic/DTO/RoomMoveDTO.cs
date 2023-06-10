@@ -9,10 +9,8 @@ namespace Sanatorium.RoomService.BusinessLogic.DTO
 	{
 		public Guid Id { get; set; }
 		public Guid PatientId { get; set; }
-		public int OldRoomNumber { get; set; }
-		public int NewRoomNumber { get; set; }
-		public Guid OldRoomId { get; set; }
-		public Guid NewRoomId { get; set; }
+		public int RoomNumber { get; set; }
+		public Guid RoomId { get; set; }
 		public DateOnly Date { get; set; }
 		public RoomMoveType MoveType { get; set; }
 
@@ -21,11 +19,9 @@ namespace Sanatorium.RoomService.BusinessLogic.DTO
 			profile.CreateMap<RoomMove, RoomMoveDTO>()
 				.ForMember(dto => dto.Id, cfg => cfg.MapFrom(rm => rm.Id))
 				.ForMember(dto => dto.PatientId, cfg => cfg.MapFrom(rm => rm.PatientId))
-				.ForMember(dto => dto.OldRoomNumber, cfg => cfg.MapFrom(rm => rm.OldRoom.RoomNumber))
-				.ForMember(dto => dto.NewRoomNumber, cfg => cfg.MapFrom(rm => rm.NewRoom.RoomNumber))
+				.ForMember(dto => dto.RoomNumber, cfg => cfg.MapFrom(rm => rm.Room.RoomNumber))
+				.ForMember(dto => dto.RoomId, cfg => cfg.MapFrom(rm => rm.RoomId))
 				.ForMember(dto => dto.Date, cfg => cfg.MapFrom(rm => rm.Date))
-				.ForMember(dto => dto.OldRoomId, cfg => cfg.MapFrom(rm => rm.OldRoomId))
-				.ForMember(dto => dto.NewRoomId, cfg => cfg.MapFrom(rm => rm.NewRoomId))
 				.ForMember(dto => dto.MoveType, cfg => cfg.MapFrom(rm => rm.MoveType));
 		}
 	}

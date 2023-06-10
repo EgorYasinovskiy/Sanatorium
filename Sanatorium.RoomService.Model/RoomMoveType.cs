@@ -3,8 +3,6 @@
 	public enum RoomMoveType
 	{
 		Settlement = 1,
-		Eviction = 2,
-		Resettlement = 4
-
+		Eviction = 2
 	}
 }

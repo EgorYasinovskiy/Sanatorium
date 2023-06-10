@@ -20,8 +20,7 @@ namespace Sanatorium.RoomService.BusinessLogic.CQRS.Commands.CreateRoomMove
 			{
 				Date = request.CreateRoomMoveDTO.Date,
 				MoveType = request.CreateRoomMoveDTO.MoveType,
-				NewRoomId = request.CreateRoomMoveDTO.NewRoomId,
-				OldRoomId = request.CreateRoomMoveDTO.OldRoomId,
+				RoomId = request.CreateRoomMoveDTO.Room,
 				PatientId = request.CreateRoomMoveDTO.PatientId,
 				Id = Guid.NewGuid()
 			};
