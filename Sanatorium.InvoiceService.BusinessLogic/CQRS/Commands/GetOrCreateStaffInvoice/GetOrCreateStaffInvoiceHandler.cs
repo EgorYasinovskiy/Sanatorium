@@ -17,7 +17,7 @@ namespace Sanatorium.InvoiceService.BusinessLogic.CQRS.Commands.GetOrCreateStaff
 		public async Task<InvoiceDTO> Handle(GetOrCreateStaffInvoice request, CancellationToken cancellationToken)
 		{
 			var invoice = await _invoiceRepository.GetInfoiceByParentIdAndDate(request.StaffId, request.DateFrom, cancellationToken);
-			if(invoice != null)
+			if (invoice != null)
 				return _mapper.Map<InvoiceDTO>(invoice);
 			var result = await _staffServiceChannel.GetStaffInvoice(request.StaffId, request.DateFrom, cancellationToken);
 			if (result == null || result.Items == null || !result.Items.Any())
@@ -28,7 +28,7 @@ namespace Sanatorium.InvoiceService.BusinessLogic.CQRS.Commands.GetOrCreateStaff
 			result.ParentId = request.StaffId;
 			invoice = _mapper.Map<Invoice>(result);
 
-			await _invoiceRepository.Create(invoice,cancellationToken);
+			await _invoiceRepository.Create(invoice, cancellationToken);
 			await _invoiceRepository.SaveChanges(cancellationToken);
 			return result;
 

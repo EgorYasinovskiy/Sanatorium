@@ -18,7 +18,7 @@ namespace Sanatorium.InventoryService.BusinessLogic.CQRS.Queries.GetInvoice
 		{
 			var missing = await _itemsRepository.GetMissing(cancellationToken);
 			var invoiceItems = new List<InvoiceItemDTO>();
-			foreach(var item in missing)
+			foreach (var item in missing)
 			{
 				invoiceItems.Add(new InvoiceItemDTO()
 				{

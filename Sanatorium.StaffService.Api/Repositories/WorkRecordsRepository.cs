@@ -45,7 +45,7 @@ namespace Sanatorium.StaffService.Api.Repositories
 			return await _staffDbContext.WorkRecords.Where(x => x.StaffId == staffId).ToListAsync(cancellationToken);
 		}
 
-		public async Task<IEnumerable<WorkRecord>> GetWithCustomFilter(System.Linq.Expressions.Expression<Func<WorkRecord,bool>> filter, CancellationToken cancellationToken)
+		public async Task<IEnumerable<WorkRecord>> GetWithCustomFilter(System.Linq.Expressions.Expression<Func<WorkRecord, bool>> filter, CancellationToken cancellationToken)
 		{
 			return await _staffDbContext.WorkRecords.Where(filter).ToListAsync(cancellationToken);
 		}

@@ -28,7 +28,7 @@ namespace Sanatorium.StaffService.BusinessLogic.CQRS.Queries.GetStaffInvoice
 					Quanitity = (int)x.Hours
 				};
 			});
-			
+
 			return new InvoiceDTO()
 			{
 				DateFrom = request.DateFrom,
