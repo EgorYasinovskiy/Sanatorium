@@ -7,7 +7,7 @@ using Sanatorium.StaffService.BusinessLogic.Interfaces;
 
 namespace Sanatorium.StaffService.BusinessLogic.CQRS.Queries.GetStaffInvoice
 {
-	internal class GetStaffInvoiceHandler : RequestHandlerBase, IRequestHandler<GetStaffInvoice, InvoiceDTO>
+	public class GetStaffInvoiceHandler : RequestHandlerBase, IRequestHandler<GetStaffInvoice, InvoiceDTO>
 	{
 		public GetStaffInvoiceHandler(IStaffRepository staffRepository, IWorkRecordRepository workRecordRepository, IMapper mapper) : base(staffRepository, workRecordRepository, mapper)
 		{
