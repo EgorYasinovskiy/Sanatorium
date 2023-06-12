@@ -15,6 +15,8 @@ namespace Sanatorium.RoomService.Api.Controllers
 		{
 			var command = new GetInvoice() { PatientID = patientId, From = fromDate };
 			var result = await Mediator.Send(command, cancellationToken);
+			if (result == null)
+				return NotFound();
 			return Ok(result);
 		}
 	}

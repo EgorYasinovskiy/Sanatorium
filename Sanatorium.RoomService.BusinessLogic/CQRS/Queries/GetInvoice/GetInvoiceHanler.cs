@@ -36,10 +36,13 @@ namespace Sanatorium.RoomService.BusinessLogic.CQRS.Queries.GetInvoice
 					Name = $"Комната №{pair.Key.Room.RoomNumber}. {pair.Key.Room.Category} категория"
 				});
 			}
-
+			if (!invoiceItems.Any())
+				return null;
 			return new InvoiceDTO()
 			{
-				Items = invoiceItems
+				Items = invoiceItems,
+				DateFrom = request.From,
+				ParentId = request.PatientID,
 			};
 		}
 	}

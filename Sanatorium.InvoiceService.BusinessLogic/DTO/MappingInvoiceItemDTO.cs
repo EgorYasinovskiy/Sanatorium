@@ -18,7 +18,8 @@ namespace Sanatorium.InvoiceService.BusinessLogic.DTO
 				.ForMember(dto => dto.Name, cfg => cfg.MapFrom(o => o.Name))
 				.ForMember(dto => dto.Quanitity, cfg => cfg.MapFrom(o => o.Quanitity))
 				.ForMember(dto => dto.Price, cfg => cfg.MapFrom(o => o.Price))
-				.ForMember(dto => dto.Sum, cfg => cfg.MapFrom<SumValueResolver>());
+				.ForMember(dto => dto.Sum, cfg => cfg.MapFrom<SumValueResolver>())
+				.ReverseMap();
 		}
 	}
 }

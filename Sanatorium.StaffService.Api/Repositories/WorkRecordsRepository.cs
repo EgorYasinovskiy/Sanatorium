@@ -28,7 +28,11 @@ namespace Sanatorium.StaffService.Api.Repositories
 		public async Task<IEnumerable<WorkRecord>> GetAll(CancellationToken cancellationToken)
 		{
 			return await _staffDbContext.WorkRecords.ToListAsync(cancellationToken);
+		}
 
+		public async Task<IEnumerable<WorkRecord>> GetByDateRange(DateOnly from, DateOnly to, CancellationToken cancellationToken)
+		{
+			return await _staffDbContext.WorkRecords.Where(x => x.Date >= from && x.Date <= to).ToListAsync(cancellationToken);
 		}
 
 		public async Task<WorkRecord> GetById(Guid id, CancellationToken cancellationToken)
@@ -39,6 +43,11 @@ namespace Sanatorium.StaffService.Api.Repositories
 		public async Task<IEnumerable<WorkRecord>> GetByStaffId(Guid staffId, CancellationToken cancellationToken)
 		{
 			return await _staffDbContext.WorkRecords.Where(x => x.StaffId == staffId).ToListAsync(cancellationToken);
+		}
+
+		public async Task<IEnumerable<WorkRecord>> GetWithCustomFilter(System.Linq.Expressions.Expression<Func<WorkRecord,bool>> filter, CancellationToken cancellationToken)
+		{
+			return await _staffDbContext.WorkRecords.Where(filter).ToListAsync(cancellationToken);
 		}
 
 		public async Task SaveChanges(CancellationToken cancellationToken)

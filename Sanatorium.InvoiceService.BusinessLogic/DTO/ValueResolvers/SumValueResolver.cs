@@ -5,7 +5,7 @@ using Sanatorium.InvoiceService.Model;
 
 namespace Sanatorium.InvoiceService.BusinessLogic.DTO.ValueResolvers
 {
-	internal class SumValueResolver : IValueResolver<InvoiceItem, InvoiceItemDTO, double>
+	public class SumValueResolver : IValueResolver<InvoiceItem, InvoiceItemDTO, double>
 	{
 		public double Resolve(InvoiceItem source, InvoiceItemDTO destination, double destMember, ResolutionContext context)
 		{

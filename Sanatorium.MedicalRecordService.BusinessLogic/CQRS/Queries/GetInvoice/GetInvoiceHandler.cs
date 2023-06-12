@@ -36,7 +36,9 @@ namespace Sanatorium.MedicalRecordService.BusinessLogic.CQRS.Queries.GetInvoice
 					Quanitity = test.Count()
 				});
 			}
-			return new InvoiceDTO() { Items = invoiceList };
+			if (!invoiceList.Any())
+				return null;
+			return new InvoiceDTO() { Items = invoiceList, DateFrom = request.From, ParentId = request.PatientId };
 		}
 	}
 }

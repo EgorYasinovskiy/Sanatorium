@@ -4,6 +4,6 @@ namespace Sanatorium.InvoiceService.BusinessLogic.Interfaces
 {
 	public interface IRoomServiceChannel
 	{
-		public InvoiceDTO GetInvoice(Guid patientId, DateOnly from);
+		public Task<InvoiceDTO> GetInvoice(Guid patientId, DateOnly from, CancellationToken token);
 	}
 }

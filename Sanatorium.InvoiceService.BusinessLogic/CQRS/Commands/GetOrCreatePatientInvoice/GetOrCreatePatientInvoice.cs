@@ -2,9 +2,9 @@
 
 using Sanatorium.Common.DTO;
 
-namespace Sanatorium.InvoiceService.BusinessLogic.CQRS.Queries.GetPatientInvoice
+namespace Sanatorium.InvoiceService.BusinessLogic.CQRS.Commands.GetOrCreatePatientInvoice
 {
-	public class GetPatientInvoice : IRequest<InvoiceDTO>
+	public class GetOrCreatePatientInvoice : IRequest<InvoiceDTO>
 	{
 		public Guid PatientId { get; set; }
 		public DateOnly DateFrom { get; set; }
