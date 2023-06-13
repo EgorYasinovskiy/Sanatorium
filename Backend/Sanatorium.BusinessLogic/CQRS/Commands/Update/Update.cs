@@ -6,6 +6,6 @@ namespace Sanatorium.PatientService.BusinessLogic.CQRS.Commands.Update
 {
 	public class Update : IRequest
 	{
-		public PatientUpdate NewPatient { get; set; }
+		public PatientUpdateDTO NewPatient { get; set; }
 	}
 }

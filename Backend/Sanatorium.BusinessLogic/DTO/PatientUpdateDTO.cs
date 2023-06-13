@@ -1,6 +1,6 @@
 ﻿namespace Sanatorium.PatientService.BusinessLogic.DTO
 {
-	public class PatientUpdate
+	public class PatientUpdateDTO
 	{
 		public Guid Id { get; set; }
 		public string FirstName { get; set; }

@@ -21,5 +21,7 @@ namespace Sanatorium.RoomService.Api
 			var bookedRooms = await Bookings.Where(x => x.ArrivalDate.AddDays(x.DurationInDays) > start || x.ArrivalDate < end).Select(x => x.RoomId).Distinct().ToListAsync(cancellationToken);
 			return Rooms.Where(x => x.IsFree && !bookedRooms.Contains(x.Id));
 		}
+
+		public RoomServiceDbContext(DbContextOptions<RoomServiceDbContext> options) : base(options) { }
 	}
 }

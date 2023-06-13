@@ -59,7 +59,7 @@ namespace Sanatorium.PatientService.Api.Controllers
 
 		[HttpPut]
 		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		public async Task<IActionResult> Update([FromBody] PatientUpdate patientDto)
+		public async Task<IActionResult> Update([FromBody] PatientUpdateDTO patientDto)
 		{
 			var command = new BusinessLogic.CQRS.Commands.Update.Update() { NewPatient = patientDto };
 			await Mediator.Send(command);

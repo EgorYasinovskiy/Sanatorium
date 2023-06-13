@@ -13,16 +13,16 @@ namespace Sanatorium.RoomService.Api.Controllers
 	[Route("api/[controller]")]
 	public class RoomMovesController : BaseController
 	{
-		[HttpGet("{start}/{end}/{patientId}")]
+		[HttpGet("byDateRange/{patientId}")]
 		[ProducesResponseType(StatusCodes.Status200OK)]
-		public async Task<ActionResult<RoomMoveList>> Get(DateOnly start, DateOnly end, Guid patientId, CancellationToken cancellationToken)
+		public async Task<ActionResult<RoomMoveList>> GetRoomMoves(Guid patientId, [FromQuery]DateOnly start, [FromQuery] DateOnly end, CancellationToken cancellationToken)
 		{
-			var command = new GetRoomMoves() { PatientId = patientId };
+			var command = new GetRoomMoves() { PatientId = patientId, PeriodStart = start, PeriodEnd = end };
 			var result = await Mediator.Send(command, cancellationToken);
 			return Ok(result);
 		}
 
-		[HttpGet("{id}", Name = "Get")]
+		[HttpGet("{id}", Name = "GetRoomMove")]
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		public async Task<ActionResult<RoomMoveList>> Get(Guid id, CancellationToken cancellationToken)
 		{
@@ -39,7 +39,7 @@ namespace Sanatorium.RoomService.Api.Controllers
 		{
 			var command = new CreateRoomMove() { CreateRoomMoveDTO = createRoomMoveDTO };
 			var result = await Mediator.Send(command);
-			return CreatedAtRoute("Get", new { id = result.Id }, result);
+			return CreatedAtRoute("GetRoomMove", new { id = result.Id }, result);
 		}
 
 		[HttpDelete("{id}")]
@@ -51,7 +51,7 @@ namespace Sanatorium.RoomService.Api.Controllers
 			return NoContent();
 		}
 
-		[HttpPost]
+		[HttpPut]
 		[ProducesResponseType(StatusCodes.Status204NoContent)]
 		public async Task<IActionResult> Update([FromBody] UpdateRoomMoveDTO updateRoomMoveDTO)
 		{

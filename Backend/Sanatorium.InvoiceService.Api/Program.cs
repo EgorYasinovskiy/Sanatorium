@@ -17,7 +17,7 @@ namespace Sanatorium.InvoiceService.Api
 			builder.Services.AddHttpClient();
 			builder.Services.AddDbContext<IInvoiceDbContext, InvoiceServiceDbContext>(cfg =>
 			{
-				cfg.UseNpgsql(builder.Configuration.GetConnectionString("invoiceServiceDb"));
+				cfg.UseNpgsql(builder.Configuration.GetConnectionString("InvoiceDb"));
 			});
 			builder.Services.AddScoped<IInvoiceRepository, InvoiceRepository>();
 
@@ -27,11 +27,19 @@ namespace Sanatorium.InvoiceService.Api
 			builder.Services.AddInventoryServiceChannel(builder.Configuration.GetConnectionString("inventoryService"));
 
 			builder.Services.AddControllers();
-
+			builder.Services.AddSwaggerGen(cfg =>
+			{
+				cfg.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo() { Title = "InvoiceServiceApi", Version = "v1" });
+			});
+			builder.Services.AddOpenApiDocument();
 			var app = builder.Build();
 
 			// Configure the HTTP request pipeline.
-
+			app.UseSwagger(o=>o.DocumentName = "InvoiceServiceApi");
+			app.UseSwaggerUI(c =>
+			{
+				c.SwaggerEndpoint("/swagger/v1/swagger.json", "InvoiceServiceApi V1");
+			});
 			app.UseHttpsRedirection();
 
 			app.UseAuthorization();

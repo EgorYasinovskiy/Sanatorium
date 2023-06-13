@@ -38,7 +38,7 @@ namespace Sanatorium.StaffService.Api.Controllers
 			return NoContent();
 		}
 
-		[HttpDelete("{id")]
+		[HttpDelete("{id}")]
 		public async Task<ActionResult> Delete(Guid id)
 		{
 			var command = new BusinessLogic.CQRS.Commands.DeleteWorkTime.DeleteWorktime()

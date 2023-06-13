@@ -32,7 +32,7 @@ namespace Sanatorium.InventoryService.Api.Controllers
 			return Ok(result);
 		}
 
-		[HttpGet("{id}", Name = "Get")]
+		[HttpGet("{id}", Name = "GetRecord")]
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		[ProducesResponseType(StatusCodes.Status404NotFound)]
 		public async Task<ActionResult<InventoryRecordDTO>> GetById(Guid id, CancellationToken cancellationToken)
@@ -49,7 +49,7 @@ namespace Sanatorium.InventoryService.Api.Controllers
 		{
 			var command = new AddItemRecord() { CreateRecordDTO = dto };
 			var result = await Mediator.Send(command);
-			return result == null ? BadRequest() : CreatedAtRoute("Get", new { id = result.Id }, result);
+			return result == null ? BadRequest() : CreatedAtRoute("GetRecord", new { id = result.Id }, result);
 		}
 
 		[HttpDelete("{id}")]

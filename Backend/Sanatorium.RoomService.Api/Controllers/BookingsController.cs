@@ -32,7 +32,7 @@ namespace Sanatorium.RoomService.Api.Controllers
 			return Ok(response);
 		}
 
-		[HttpGet("{id}", Name = "Get")]
+		[HttpGet("{id}", Name = "GetBooking")]
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		[ProducesResponseType(StatusCodes.Status404NotFound)]
 		public async Task<ActionResult<BookingDTO>> GetById(Guid id, CancellationToken cancellationToken)
@@ -51,7 +51,7 @@ namespace Sanatorium.RoomService.Api.Controllers
 		{
 			var command = new CreateBooking() { CreateBookingDTO = createBookingDTO };
 			var booking = await Mediator.Send(command);
-			return CreatedAtRoute("Get", new { id = booking.Id }, booking);
+			return CreatedAtRoute("GetBooking", new { id = booking.Id }, booking);
 		}
 
 		[HttpDelete("{id}")]

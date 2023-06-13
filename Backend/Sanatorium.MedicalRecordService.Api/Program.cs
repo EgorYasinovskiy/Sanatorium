@@ -37,8 +37,20 @@ namespace Sanatorium.MedicalRecordService.Api
 			});
 
 			builder.Services.AddControllers();
-
+			builder.Services.AddSwaggerGen(cfg =>
+			{
+				cfg.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo() { Title = "MedicalRecordsServiceApi", Version = "v1" });
+			});
+			builder.Services.AddOpenApiDocument();
+			
 			var app = builder.Build();
+
+			// Configure the HTTP request pipeline.
+			app.UseSwagger(o => o.DocumentName = "MedicalRecordsServiceApi");
+			app.UseSwaggerUI(c =>
+			{
+				c.SwaggerEndpoint("/swagger/v1/swagger.json", "MedicalRecordsServiceApi V1");
+			});
 
 			// Configure the HTTP request pipeline.
 

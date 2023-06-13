@@ -2,6 +2,10 @@
 
 using Sanatorium.Common.Mappings;
 using Sanatorium.PatientService.BusinessLogic.Interfaces;
+using Swashbuckle.AspNetCore.SwaggerGen;
+using Swashbuckle.AspNetCore;
+using Swashbuckle;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace Sanatorium.PatientService.Api
 {
@@ -28,11 +32,23 @@ namespace Sanatorium.PatientService.Api
 			});
 
 			builder.Services.AddControllers();
-
+			builder.Services.AddSwaggerGen(cfg =>
+			{
+				cfg.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo() { Title = "PatientServiceApi", Version = "v1" });
+			});
+			builder.Services.AddOpenApiDocument();
 			var app = builder.Build();
 
 			// Configure the HTTP request pipeline.
 			app.UseHttpsRedirection();
+			app.UseSwagger(o =>
+			{
+				o.DocumentName = "PatientServiceApi";
+			});
+			app.UseSwaggerUI(c =>
+			{
+				c.SwaggerEndpoint("/swagger/v1/swagger.json", "PatientServiceApi V1");
+			});
 			app.UseAuthorization();
 			app.MapControllers();
 			app.Run();
