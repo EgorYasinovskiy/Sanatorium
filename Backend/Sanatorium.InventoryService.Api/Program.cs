@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 
 using Sanatorium.Common.Mappings;
 using Sanatorium.InventoryService.Api.Repositories;
+using Sanatorium.InventoryService.BusinessLogic.DTO.ValueResolvers;
 using Sanatorium.InventoryService.BusinessLogic.Interfaces;
 
 namespace Sanatorium.InventoryService.Api
@@ -20,10 +21,13 @@ namespace Sanatorium.InventoryService.Api
 			});
 			builder.Services.AddScoped<IItemsRepository, ItemsRepository>();
 			builder.Services.AddScoped<IRecordsRepository, ItemRecordsRepository>();
+			builder.Services.AddDateOnlyTimeOnlyStringConverters();
 			builder.Services.AddAutoMapper(cfg =>
 			{
 				cfg.AddProfile(new AssemblyMappingsProfile(typeof(IInventoryDbContext).Assembly));
 			});
+			builder.Services.AddTransient<NeedToByResolver>();
+			builder.Services.AddTransient<TotalSumResolver>();
 			builder.Services.AddMediatR(cfg =>
 			{
 				cfg.RegisterServicesFromAssemblies(typeof(IInventoryDbContext).Assembly);
@@ -39,7 +43,7 @@ namespace Sanatorium.InventoryService.Api
 			
 			// Configure the HTTP request pipeline. 
 
-			app.UseHttpsRedirection();
+			
 			app.UseSwagger((o)=>o.DocumentName="InventoryServiceApi");
 			app.UseSwaggerUI(c =>
 			{

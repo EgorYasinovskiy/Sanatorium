@@ -17,6 +17,7 @@ import {
   CreateRoomMoveDTO,
   InvoiceDTO,
   ProblemDetails,
+  RoomDTO,
   RoomListDTO,
   RoomMoveList,
   UpdateBookingDTO,
@@ -134,12 +135,31 @@ export class RoomApi<SecurityDataType = unknown> extends HttpClient<SecurityData
    */
   roomMovesGetRoomMoves = (
     patientId: string,
-    start: string,
-    end: string,
+    query?: {
+      /** @format date */
+      start?: string;
+      /** @format date */
+      end?: string;
+    },
     params: RequestParams = {},
   ) =>
     this.request<RoomMoveList, any>({
-      path: `/api/RoomMoves/byDateRange/${patientId}?start=${start}&end=${end}`,
+      path: `/api/RoomMoves/byDateRange/${patientId}`,
+      method: "GET",
+      query: query,
+      format: "json",
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags RoomMoves
+   * @name RoomMovesGetRoomMovesByPatient
+   * @request GET:/api/RoomMoves/byPatient/{patientId}
+   */
+  roomMovesGetRoomMovesByPatient = (patientId: string, params: RequestParams = {}) =>
+    this.request<RoomMoveList, any>({
+      path: `/api/RoomMoves/byPatient/${patientId}`,
       method: "GET",
       format: "json",
       ...params,
@@ -263,11 +283,11 @@ export class RoomApi<SecurityDataType = unknown> extends HttpClient<SecurityData
    * No description
    *
    * @tags Rooms
-   * @name RoomsGet2
+   * @name RoomsGetRoom
    * @request GET:/api/Rooms/{id}
    */
-  roomsGet2 = (id: string, params: RequestParams = {}) =>
-    this.request<RoomListDTO, ProblemDetails>({
+  roomsGetRoom = (id: string, params: RequestParams = {}) =>
+    this.request<RoomDTO, ProblemDetails>({
       path: `/api/Rooms/${id}`,
       method: "GET",
       format: "json",

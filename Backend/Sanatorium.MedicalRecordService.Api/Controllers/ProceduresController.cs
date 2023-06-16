@@ -42,7 +42,7 @@ namespace Sanatorium.MedicalRecordService.Api.Controllers
 			return result.ProcedureReffals.Any() ? Ok(result) : NoContent();
 		}
 
-		[HttpGet("{id}", Name = "GetType")]
+		[HttpGet("{id}", Name = "GetProcedureType")]
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		[ProducesResponseType(StatusCodes.Status404NotFound)]
 		public async Task<ActionResult<ProcedureTypeDTO>> GetTypeById(Guid id, CancellationToken cancellationToken)
@@ -52,7 +52,7 @@ namespace Sanatorium.MedicalRecordService.Api.Controllers
 			return result == null ? NotFound() : Ok(result);
 		}
 
-		[HttpGet("reffals/{id}", Name = "GetReffal")]
+		[HttpGet("reffals/{id}", Name = "GetProcedureReffal")]
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		[ProducesResponseType(StatusCodes.Status404NotFound)]
 		public async Task<ActionResult<ProcedureReffalDTO>> GetReffalById(Guid id, CancellationToken cancellationToken)
@@ -69,7 +69,7 @@ namespace Sanatorium.MedicalRecordService.Api.Controllers
 		{
 			var command = new AddProcedureReffal() { CreateProceduralReffalDTO = dto };
 			var result = await Mediator.Send(command);
-			return result == null ? BadRequest() : CreatedAtRoute("GetReffal", new { id = result.Id }, result);
+			return result == null ? BadRequest() : CreatedAtRoute("GetProcedureReffal", new { id = result.Id }, result);
 		}
 
 		[HttpPost]
@@ -79,7 +79,7 @@ namespace Sanatorium.MedicalRecordService.Api.Controllers
 		{
 			var command = new AddProcedureType() { CreateProcedureTypeDTO = dto };
 			var result = await Mediator.Send(command);
-			return result == null ? BadRequest() : CreatedAtRoute("GetType", new { id = result.Id }, result);
+			return result == null ? BadRequest() : CreatedAtRoute("GetProcedureType", new { id = result.Id }, result);
 		}
 	}
 }

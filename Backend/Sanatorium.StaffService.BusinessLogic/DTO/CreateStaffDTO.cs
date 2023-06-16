@@ -11,7 +11,7 @@
 		public int DayWork { get; set; }
 		public int DayHoliday { get; set; }
 		public DateOnly WorkStart { get; set; }
-		public Guid ManagerId { get; set; }
+		public Guid? ManagerId { get; set; }
 		public double SalaryPerHour { get; set; }
 	}
 }

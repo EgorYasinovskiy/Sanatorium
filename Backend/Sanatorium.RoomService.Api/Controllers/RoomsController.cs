@@ -35,7 +35,7 @@ namespace Sanatorium.RoomService.Api.Controllers
 		[HttpGet("{id}", Name = "GetRoom")]
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		public async Task<ActionResult<RoomListDTO>> Get(Guid id, CancellationToken cancellationToken)
+		public async Task<ActionResult<RoomDTO>> GetRoom(Guid id, CancellationToken cancellationToken)
 		{
 			var command = new GetRoom() { Id = id };
 			var result = await Mediator.Send(command, cancellationToken);

@@ -26,7 +26,7 @@ import {
   StaffWorkRecordsDTO,
   UpdateStaffDTO,
   UpdateWorkTime,
-} from "./data-contracts";
+} from "./StaffServiceDataContract";
 import { ContentType, HttpClient, RequestParams } from "./http-client";
 
 export class StaffApi<SecurityDataType = unknown> extends HttpClient<SecurityDataType> {
@@ -166,7 +166,7 @@ export class StaffApi<SecurityDataType = unknown> extends HttpClient<SecurityDat
    * @name StaffChangeManager2
    * @request PUT:/api/Staff/position
    */
-  staffChangeManager2 = (data: ChangePosition, params: RequestParams = {}) =>
+  changePosition = (data: ChangePosition, params: RequestParams = {}) =>
     this.request<void, ProblemDetails>({
       path: `/api/Staff/position`,
       method: "PUT",

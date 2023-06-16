@@ -3,6 +3,7 @@ using Microsoft.OpenApi.Models;
 
 using Sanatorium.Common.Mappings;
 using Sanatorium.StaffService.Api.Repositories;
+using Sanatorium.StaffService.BusinessLogic.DTO.ValueResolvers;
 using Sanatorium.StaffService.BusinessLogic.Interfaces;
 
 namespace Sanatorium.StaffService.Api
@@ -15,6 +16,7 @@ namespace Sanatorium.StaffService.Api
 
 			// Add services to the container.
 
+			builder.Services.AddCors();
 			builder.Services.AddDbContext<IStaffDbContext, StaffServiceDbContext>(opt =>
 			{
 				opt.UseNpgsql(builder.Configuration.GetConnectionString("StaffDb"));
@@ -25,6 +27,7 @@ namespace Sanatorium.StaffService.Api
 			{
 				cfg.AddProfile(new AssemblyMappingsProfile(typeof(IStaffDbContext).Assembly));
 			});
+			builder.Services.AddTransient<ManagerNameValueResolver>();
 			builder.Services.AddMediatR(cfg =>
 			{
 				cfg.RegisterServicesFromAssemblies(typeof(IStaffDbContext).Assembly);
@@ -44,14 +47,19 @@ namespace Sanatorium.StaffService.Api
 
 
 			var app = builder.Build();
-
+			app.UseCors(x =>
+			{
+				x.AllowAnyHeader();
+				x.AllowAnyOrigin();
+				x.AllowAnyMethod();
+			});
 			// Configure the HTTP request pipeline.
 			app.UseSwagger(o => o.DocumentName = "StaffServiceApi");
 			app.UseSwaggerUI(c =>
 			{
 				c.SwaggerEndpoint("/swagger/v1/swagger.json", "StaffServiceApi V1");
 			});
-			app.UseHttpsRedirection();
+			
 			app.UseAuthorization();
 			app.MapControllers();
 			app.Run();

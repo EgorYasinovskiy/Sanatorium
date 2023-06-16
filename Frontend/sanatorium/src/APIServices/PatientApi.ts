@@ -9,7 +9,7 @@
  * ---------------------------------------------------------------
  */
 
-import { CreatePatientDTO, PatientDTO, PatientList, PatientUpdateDTO, ProblemDetails } from "./PatientListDataContract";
+import { CreatePatientDTO, PatientDTO, PatientList, PatientUpdateDTO, ProblemDetails } from "./PatientDataContract";
 import { ContentType, HttpClient, RequestParams } from "./http-client";
 
 export class PatientServiceApi<SecurityDataType = unknown> extends HttpClient<SecurityDataType> {

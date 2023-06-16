@@ -8,7 +8,7 @@ namespace Sanatorium.StaffService.BusinessLogic.DTO.ValueResolvers
 	{
 		public string Resolve(Staff source, StaffDTO destination, string destMember, ResolutionContext context)
 		{
-			return source.Manager == null ? source.Manager.GetDisplayString() : "";
+			return source.Manager != null ? source.Manager.GetDisplayString() : "";
 		}
 	}
 }

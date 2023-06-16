@@ -1,0 +1,28 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    align-self: center;
+    margin: 0 auto;
+    width: 90%;
+}
+table {
+    margin : 0 auto;
+    width: 50%;
+}
+
+.delete{
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.delText{
+    display: block;
+}
+.editBtn{
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}

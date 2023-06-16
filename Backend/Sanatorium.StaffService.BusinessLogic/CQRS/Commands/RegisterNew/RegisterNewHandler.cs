@@ -16,7 +16,11 @@ namespace Sanatorium.StaffService.BusinessLogic.CQRS.Commands.RegisterNew
 
 		public async Task<StaffDTO> Handle(RegisterNew request, CancellationToken cancellationToken)
 		{
-			var manager = _staffRepository.GetById(request.CreateStaffDTO.ManagerId, cancellationToken);
+			Staff manager = null;
+			if (request.CreateStaffDTO.ManagerId != null && request.CreateStaffDTO.ManagerId != Guid.Empty)
+			{
+				manager = await _staffRepository.GetById(request.CreateStaffDTO.ManagerId.Value, cancellationToken);
+			}
 			var staff = new Staff()
 			{
 				Id = Guid.NewGuid(),
@@ -31,7 +35,7 @@ namespace Sanatorium.StaffService.BusinessLogic.CQRS.Commands.RegisterNew
 				WorkStart = request.CreateStaffDTO.WorkStart,
 				SalaryPerHour = request.CreateStaffDTO.SalaryPerHour,
 				ManagerId = request.CreateStaffDTO.ManagerId,
-				Manager = await manager
+				Manager = manager
 			};
 			await _staffRepository.Create(staff, cancellationToken);
 			await _staffRepository.SaveChanges(cancellationToken);

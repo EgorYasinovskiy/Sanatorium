@@ -17,8 +17,9 @@ namespace Sanatorium.RoomService.Api
 
 			builder.Services.AddDbContext<IRoomServiceDbContext, RoomServiceDbContext>(opt =>
 			{
-				opt.UseNpgsql(builder.Configuration.GetConnectionString("RoomServiceDB"));
+				opt.UseNpgsql(builder.Configuration.GetConnectionString("RoomDb"));
 			});
+			builder.Services.AddCors();
 			builder.Services.AddScoped<IRoomRepository, RoomRepository>();
 			builder.Services.AddScoped<IBookingRepository, BookingRepository>();
 			builder.Services.AddScoped<IRoomMoveRepository, RoomMoveRepository>();
@@ -44,7 +45,13 @@ namespace Sanatorium.RoomService.Api
 
 
 			var app = builder.Build();
-
+			app.UseCors(x =>
+			{
+				x.AllowAnyHeader();
+				x.AllowAnyMethod();
+				x.AllowAnyOrigin();
+			}
+			);
 			// Configure the HTTP request pipeline.
 			app.UseSwagger(o => o.DocumentName = "RoomServiceApi");
 			app.UseSwaggerUI(c =>
@@ -54,7 +61,7 @@ namespace Sanatorium.RoomService.Api
 
 			// Configure the HTTP request pipeline.
 
-			app.UseHttpsRedirection();
+			
 			app.UseAuthorization();
 			app.MapControllers();
 			app.Run();

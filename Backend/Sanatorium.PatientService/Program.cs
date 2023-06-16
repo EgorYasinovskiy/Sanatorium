@@ -25,6 +25,7 @@ namespace Sanatorium.PatientService.Api
 			{
 				cfg.AddProfile(new AssemblyMappingsProfile(typeof(IPatientDbContext).Assembly));
 			});
+			builder.Services.AddDateOnlyTimeOnlyStringConverters();
 
 			builder.Services.AddMediatR(cfg =>
 			{
@@ -32,6 +33,7 @@ namespace Sanatorium.PatientService.Api
 			});
 
 			builder.Services.AddControllers();
+			builder.Services.AddCors();
 			builder.Services.AddSwaggerGen(cfg =>
 			{
 				cfg.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo() { Title = "PatientServiceApi", Version = "v1" });
@@ -40,7 +42,12 @@ namespace Sanatorium.PatientService.Api
 			var app = builder.Build();
 
 			// Configure the HTTP request pipeline.
-			app.UseHttpsRedirection();
+			app.UseCors(x =>
+			{
+				x.AllowAnyHeader();
+				x.AllowAnyMethod();
+				x.AllowAnyOrigin();
+			});
 			app.UseSwagger(o =>
 			{
 				o.DocumentName = "PatientServiceApi";
@@ -52,6 +59,7 @@ namespace Sanatorium.PatientService.Api
 			app.UseAuthorization();
 			app.MapControllers();
 			app.Run();
+
 		}
 	}
 }

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-using Sanatorium.PatientService.BusinessLogic.EntityConfigurations;
+using Sanatorium.PatientService.Api.EntityConfigurations;
 using Sanatorium.PatientService.BusinessLogic.Interfaces;
 using Sanatorium.PatientService.Model;
 
@@ -10,7 +10,10 @@ namespace Sanatorium.PatientService.Api
 	{
 		public DbSet<Patient> Patients { get; set; }
 
-		public PatientDbContext(DbContextOptions<PatientDbContext> options) : base(options) { }
+		public PatientDbContext(DbContextOptions<PatientDbContext> options) : base(options)
+		{
+			Database.EnsureCreated();
+		}
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{

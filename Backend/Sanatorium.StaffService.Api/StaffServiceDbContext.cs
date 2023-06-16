@@ -10,6 +10,9 @@ namespace Sanatorium.StaffService.Api
 		public DbSet<Staff> Staff { get; set; }
 		public DbSet<WorkRecord> WorkRecords { get; set; }
 
-		public StaffServiceDbContext(DbContextOptions<StaffServiceDbContext> options) : base(options) { }
+		public StaffServiceDbContext(DbContextOptions<StaffServiceDbContext> options) : base(options)
+		{
+			Database.EnsureCreated();
+		}
 	}
 }

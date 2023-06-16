@@ -25,6 +25,8 @@ namespace Sanatorium.MedicalRecordService.Api
 			builder.Services.AddScoped<ITestResultsRepository, TestResultsRepository>();
 			builder.Services.AddScoped<IProcedureTypeRepository, ProcedureTypesRepository>();
 			builder.Services.AddScoped<IProcedureReffalsRepository, ProcedureReffalsRepository>();
+			builder.Services.AddDateOnlyTimeOnlyStringConverters();
+
 
 			builder.Services.AddAutoMapper(cfg =>
 			{
@@ -54,7 +56,7 @@ namespace Sanatorium.MedicalRecordService.Api
 
 			// Configure the HTTP request pipeline.
 
-			app.UseHttpsRedirection();
+			
 			app.UseAuthorization();
 			app.MapControllers();
 			app.Run();

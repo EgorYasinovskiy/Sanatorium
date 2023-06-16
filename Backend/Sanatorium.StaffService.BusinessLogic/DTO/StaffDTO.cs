@@ -16,7 +16,7 @@ namespace Sanatorium.StaffService.BusinessLogic.DTO
 		public string PhoneNumber { get; set; }
 		public int CabinetNumber { get; set; }
 		public string Position { get; set; }
-		public Guid ManagerId { get; set; }
+		public Guid? ManagerId { get; set; }
 		public string ManagerName { get; set; }
 		public int DayWork { get; set; }
 		public int DayHoliday { get; set; }

@@ -13,11 +13,13 @@ namespace Sanatorium.StaffService.BusinessLogic.DTO
 		public string LastName { get; set; }
 		public DateOnly BirthDate { get; set; }
 		public string PhoneNumber { get; set; }
+		public string Position { get; set; }
 
 		public void CreateMapping(Profile profile)
 		{
 			profile.CreateMap<Staff, StaffListItem>()
 				.ForMember(sli => sli.Id, cfg => cfg.MapFrom(staff => staff.Id))
+				.ForMember(sli => sli.Position, cfg => cfg.MapFrom(staff => staff.Position))
 				.ForMember(sli => sli.FirstName, cfg => cfg.MapFrom(staff => staff.FirstName))
 				.ForMember(sli => sli.MiddleName, cfg => cfg.MapFrom(staff => staff.MiddleName))
 				.ForMember(sli => sli.LastName, cfg => cfg.MapFrom(staff => staff.LastName))

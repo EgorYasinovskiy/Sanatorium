@@ -19,7 +19,7 @@ namespace Sanatorium.StaffService.Api.Controllers
 			return Ok(result);
 		}
 
-		[HttpGet("{id}", Name = "Get")]
+		[HttpGet("{id}", Name = "GetStaff")]
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		[ProducesResponseType(StatusCodes.Status404NotFound)]
 		public async Task<ActionResult<StaffDTO>> GetStaff(Guid id)
@@ -71,7 +71,7 @@ namespace Sanatorium.StaffService.Api.Controllers
 		[HttpPut("position")]
 		[ProducesResponseType(StatusCodes.Status204NoContent)]
 		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		public async Task<ActionResult> ChangeManager([FromBody] BusinessLogic.CQRS.Commands.ChangePosition.ChangePosition command)
+		public async Task<ActionResult> ChangePosition([FromBody] BusinessLogic.CQRS.Commands.ChangePosition.ChangePosition command)
 		{
 			await Mediator.Send(command);
 			return NoContent();
@@ -139,7 +139,7 @@ namespace Sanatorium.StaffService.Api.Controllers
 				CreateStaffDTO = staffDto
 			};
 			var result = await Mediator.Send(command);
-			return CreatedAtRoute("Get", result);
+			return CreatedAtRoute("GetStaff", new {id = result.Id },result);
 		}
 
 	}

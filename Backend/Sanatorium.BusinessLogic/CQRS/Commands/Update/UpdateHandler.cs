@@ -24,6 +24,7 @@ namespace Sanatorium.PatientService.BusinessLogic.CQRS.Commands.Update
 				pacient.PhoneNumber = request.NewPatient.PhoneNumber;
 
 				await _patientRepository.Update(pacient, cancellationToken);
+				await _patientRepository.SaveChanges(cancellationToken);
 			}
 		}
 	}

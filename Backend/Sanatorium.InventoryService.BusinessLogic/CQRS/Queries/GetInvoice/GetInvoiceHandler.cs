@@ -27,12 +27,19 @@ namespace Sanatorium.InventoryService.BusinessLogic.CQRS.Queries.GetInvoice
 					Quanitity = item.RequiredQuantity - item.Quantity
 				});
 			};
-			return new InvoiceDTO()
+			try
 			{
-				ParentId = new Guid(Constants.InventoryInvoiceGuid),
-				DateFrom = DateOnly.FromDateTime(DateTime.Now),
-				Items = invoiceItems,
-			};
+				return new InvoiceDTO()
+				{
+					ParentId = new Guid(Constants.InventoryInvoiceGuid),
+					DateFrom = DateOnly.FromDateTime(DateTime.Now),
+					Items = invoiceItems,
+				};
+			}
+			catch (Exception ex)
+			{
+				throw;
+			}
 		}
 	}
 }

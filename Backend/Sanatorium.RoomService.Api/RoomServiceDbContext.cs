@@ -22,6 +22,9 @@ namespace Sanatorium.RoomService.Api
 			return Rooms.Where(x => x.IsFree && !bookedRooms.Contains(x.Id));
 		}
 
-		public RoomServiceDbContext(DbContextOptions<RoomServiceDbContext> options) : base(options) { }
+		public RoomServiceDbContext(DbContextOptions<RoomServiceDbContext> options) : base(options)
+		{
+			Database.EnsureCreated();
+		}
 	}
 }

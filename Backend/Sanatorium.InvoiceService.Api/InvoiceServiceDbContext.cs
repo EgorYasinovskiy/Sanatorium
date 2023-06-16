@@ -10,6 +10,9 @@ namespace Sanatorium.InvoiceService.Api
 		public DbSet<InvoiceItem> InvoiceItems { get; set; }
 		public DbSet<Invoice> Invoices { get; set; }
 
-		public InvoiceServiceDbContext(DbContextOptions<InvoiceServiceDbContext> options) : base(options) { }
+		public InvoiceServiceDbContext(DbContextOptions<InvoiceServiceDbContext> options) : base(options)
+		{
+			Database.EnsureCreated();
+		}
 	}
 }

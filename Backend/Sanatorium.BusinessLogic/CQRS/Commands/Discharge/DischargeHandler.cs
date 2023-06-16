@@ -17,7 +17,7 @@ namespace Sanatorium.PatientService.BusinessLogic.CQRS.Commands.Discharge
 			if (patient != null)
 			{
 				patient.Discharged = true;
-				patient.DateRegistered = DateOnly.FromDateTime(DateTime.Now);
+				patient.DateDischarged = DateOnly.FromDateTime(DateTime.Now);
 				await _patientRepository.Update(patient, cancellationToken);
 				await _patientRepository.SaveChanges(cancellationToken);
 			}

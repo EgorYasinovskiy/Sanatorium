@@ -56,6 +56,7 @@ export interface StaffListItem {
   firstName?: string;
   middleName?: string;
   lastName?: string;
+  position? : string;
   /** @format date */
   birthDate?: string;
   phoneNumber?: string;
@@ -179,7 +180,7 @@ export interface CreateStaffDTO {
   /** @format date */
   workStart?: string;
   /** @format guid */
-  managerId?: string;
+  managerId?: string | null;
   /** @format double */
   salaryPerHour?: number;
 }

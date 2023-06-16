@@ -13,7 +13,7 @@ namespace Sanatorium.InventoryService.Api
 
 		public InventoryDbContext(DbContextOptions<InventoryDbContext> options) : base(options)
 		{
-
+			Database.EnsureCreated();
 		}
 	}
 }

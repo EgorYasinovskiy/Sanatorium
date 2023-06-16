@@ -11,10 +11,20 @@ namespace Sanatorium.InvoiceService.Api.Controllers
 	[Produces("application/json")]
 	public class ReportController : BaseController
 	{
+		[HttpGet("test")]
+		public string Get()
+		{
+			return "zalupa";
+		}
+		[HttpGet("test2")]
+		public async Task<IActionResult> Test2()
+		{
+			return BadRequest();
+		}
 		[HttpGet("patient/{patientId}/{dateFrom}")]
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		public async Task<ActionResult<InvoiceDTO>> GetPatientInvoice(Guid patientId, DateOnly dateFrom, [FromQuery] bool refreshData, CancellationToken cancellationToken)
+		public async Task<ActionResult<InvoiceDTO>> GetPatientInvoice(Guid patientId,DateOnly dateFrom, [FromQuery] bool refreshData, CancellationToken cancellationToken)
 		{
 			var command = new GetOrCreatePatientInvoice()
 			{

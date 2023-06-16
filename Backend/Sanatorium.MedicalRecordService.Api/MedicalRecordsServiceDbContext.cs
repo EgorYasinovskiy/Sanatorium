@@ -15,6 +15,15 @@ namespace Sanatorium.MedicalRecordService.Api
 		public DbSet<ProcedureReffal> ProcedureReffals { get; set; }
 		public DbSet<ProcedureType> ProcedureTypes { get; set; }
 
-		public MedicalRecordsServiceDbContext(DbContextOptions<MedicalRecordsServiceDbContext> options) : base(options) { }
+		public MedicalRecordsServiceDbContext(DbContextOptions<MedicalRecordsServiceDbContext> options) : base(options)
+		{
+			Database.EnsureCreated();
+		}
+
+		protected override void OnModelCreating(ModelBuilder modelBuilder)
+		{
+			base.OnModelCreating(modelBuilder);
+			modelBuilder.ApplyConfiguration<TestReffal>(new TestReffalEntityConfig());
+		}
 	}
 }

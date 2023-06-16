@@ -1,0 +1,49 @@
+.itemRow{
+    margin : 3px 0;
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 90%;
+    border: 2px solid #111;
+    border-radius: 4px;
+    font-size: 14pt;
+    padding: 5px 0 0 15px;
+}
+.buttonsContainer{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.buttonsContainer button{
+    margin-right: 5px;
+}
+.modalwindow{
+    pointer-events: none;
+    position: absolute;
+    z-index: 1000;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    top:0;
+    left:0;
+    opacity: 0;
+    transition: 0.5s;
+}
+.active{
+    pointer-events: all;
+    opacity: 1;
+    transition: 0.5s;
+}
+.modalContainer
+{
+    transition: 0.4s;
+    padding: 15px 30px;
+    width: 40vw;
+    height: 40vh;
+    background-color: white;
+}

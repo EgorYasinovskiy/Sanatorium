@@ -1,0 +1,91 @@
+version: "3"
+services:
+  patientservice:
+    image: patientservice
+    build:
+      context: .
+      dockerfile: Dockerfile-patient
+    restart: always
+    ports:
+      - "1111:80"
+    environment:
+      - ASPNETCORE_URLS=http://+80
+    container_name: patientservice
+  inventoryservice:
+    image: inventoryservice
+    build:
+      context: .
+      dockerfile: Dockerfile-inventory
+    restart: always
+    ports:
+      - "2222:80"
+    environment:
+      - ASPNETCORE_URLS=http://+80
+    container_name: inventoryService
+  invoiceservice:
+    image: invoiceservice
+    build:
+      context: .
+      dockerfile: Dockerfile-invoice
+    restart: always
+    ports:
+      - "3333:80"
+    container_name: invoiceservice
+    environment:
+      - ASPNETCORE_URLS=http://+80
+  medicalservice:
+    image: medicalservice
+    build:
+      context: .
+      dockerfile: Dockerfile-medical
+    restart: always
+    ports:
+      - "4444:80"
+    environment:
+      - ASPNETCORE_URLS=http://+80
+    container_name: medicalservice
+  roomservice:
+    image: roomservice
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile-room
+    ports:
+      - "5555:80"
+    container_name: roomservice
+    environment:
+      - ASPNETCORE_URLS=http://+80
+  staffservice:
+    image: staffservice
+    build:
+      context: .
+      dockerfile: Dockerfile-staff
+    restart: always
+    ports:
+      - "6666:80"
+    environment:
+      - ASPNETCORE_URLS=http://+80
+    container_name: staffservice
+  frontend:
+    restart: always
+    image: sanatoriumfrontend
+    build:
+      context: Frontend/sanatorium
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    container_name: frontend
+  rabbitmq:
+    image: rabbitmq:alpine
+    hostname: rabbitmq
+    restart: always
+    environment:
+      - RABBITMQ_DEFAULT_USER=serviceUser
+      - RABBITMQ_DEFAULT_PASS=servicePassword
+      - RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS=-rabbit disk_free_limit 2147483648
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    volumes:
+      - /home/rabbitmq:/var/lib/rabbitmq
+    container_name: rabbitmq
